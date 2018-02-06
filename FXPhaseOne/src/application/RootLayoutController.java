@@ -41,7 +41,7 @@ public class RootLayoutController {
 	
 	@FXML
 	private void initialize() { //an FXML method
-		btnFirstButton.setText("SUB 1");
+		btnFirstButton.setText("SUBBB 1");
 		btnSecondButton.setText("ADD 1");
 		lblMyLabel.setVisible(true);
 		lblMySecond.setText("Value");

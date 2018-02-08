@@ -28,7 +28,6 @@ public class Main extends Application {
 			//set main application and provide title and Icon
 			this.primaryStage = primaryStage;
 			this.primaryStage.setTitle("Hello World for Privates");
-			
 			//set the Application Icon
 			this.primaryStage.getIcons().add(new Image("file:resource/AppIcon.png"));
 			

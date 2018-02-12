@@ -7,7 +7,10 @@ Period 3
 Assignment: FXPhase 1
 */
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +42,23 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		
+		//.csv, comma separated values
+		String filename = "samples.csv";
+		File file = new File(filename);
+			// you can read input stream, delete etc.
+		try {
+			Scanner inputStream = new Scanner(file);
+			while(inputStream.hasNext()) {
+				String data = inputStream.next();
+				System.out.println(data);
+			}
+			inputStream.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		launch(args);
 	}
 

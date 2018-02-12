@@ -52,6 +52,7 @@ public class Main extends Application {
 			while(inputStream.hasNext()) {
 				String data = inputStream.next();
 				System.out.println(data);
+				System.out.println(data);
 			}
 			inputStream.close();
 		} catch (FileNotFoundException e) {

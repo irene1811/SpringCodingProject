@@ -43,23 +43,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		
-		//.csv, comma separated values
-		String filename = "samples.csv";
-		File file = new File(filename);
-			// you can read input stream, delete etc.
-		try {
-			Scanner inputStream = new Scanner(file);
-			while(inputStream.hasNext()) {
-				String data = inputStream.next();
-				System.out.println(data);
-				System.out.println(data);
-			}
-			inputStream.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		RootLayoutController.dataCollected();
 		launch(args);
 	}
 

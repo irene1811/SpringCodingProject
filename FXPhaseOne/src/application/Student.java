@@ -2,47 +2,71 @@ package application;
 
 public class Student {
 	//fields for student class 
-	private int studentID;
-	private int password;
-	private int grade;
+	private String studentID;
+	private String firstName;
+	private String lastName;
+	private String grade;
+	private String password;
+	
 
 //Constructor
 	//Default
 public Student() {
-	studentID = 0;
-	password = 0;
-	grade = 0;
+	this.studentID = "";
+	this.firstName = "";
+	this.lastName = "";
+	this.grade = "";
+	this.password = "";
 }
 
-public Student(int ID, int pw, int grd) {
-	studentID = ID;
-	password = pw;
-	grade = grd;
-}
-
-//Getters and Setters
-public int getStudentID() {
-	return studentID;
-}
-
-public void setStudentID(int studentID) {
+public Student(String studentID, String firstName, String lastName, String grade, String password) {
 	this.studentID = studentID;
-}
-
-public int getPassword() {
-	return password;
-}
-
-public void setPassword(int password) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.grade = grade;
 	this.password = password;
 }
 
-public int getGrade() {
+//Getter and Setters
+
+public String getStudentID() {
+	return studentID;
+}
+
+public void setStudentID(String studentID) {
+	this.studentID = studentID;
+}
+
+public String getFirstName() {
+	return firstName;
+}
+
+public void setFirstName(String firstName) {
+	this.firstName = firstName;
+}
+
+public String getLastName() {
+	return lastName;
+}
+
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
+
+public String getGrade() {
 	return grade;
 }
 
-public void setGrade(int grade) {
+public void setGrade(String grade) {
 	this.grade = grade;
+}
+
+public String getPassword() {
+	return password;
+}
+
+public void setPassword(String password) {
+	this.password = password;
 }
 
 

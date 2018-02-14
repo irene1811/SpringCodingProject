@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
 public class RootLayoutController {
 
@@ -35,7 +33,6 @@ public class RootLayoutController {
 		String filename = "samples.csv";
 		File file = new File(filename);
 			// you can read input stream, delete etc.
-		int x = 0;
 		try {
 			Scanner inputStream = new Scanner(file);
 			while(inputStream.hasNext()) {	

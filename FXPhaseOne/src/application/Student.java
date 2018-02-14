@@ -1,4 +1,11 @@
 package application;
+/*
+AP-CSA Smart Voting
+Irene Cho, Ria Gonsalves, Saachi Wadhwani
+Johns Creek High School
+Period 3
+Assignment: Spring Project
+*/
 
 public class Student {
 	//fields for student class 

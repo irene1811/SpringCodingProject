@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 
 public class RootLayoutController {
 
@@ -56,10 +58,12 @@ public class RootLayoutController {
 		System.out.println(studentList.get(0).getPassword());
 	}
 	
+	@FXML 
+	private Label dummy;
+	
 	
 	@FXML
 	private void initialize() { //an FXML method
-	
 	}
 	
 	@FXML //Subtract

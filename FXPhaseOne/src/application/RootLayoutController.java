@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -152,6 +153,10 @@ public class RootLayoutController {
 	@FXML 
 	private Button dec;
 	@FXML 
+	private Button inc1;
+	@FXML 
+	private Button dec1;
+	@FXML 
 	private Button save;
 	@FXML 
 	private Button closeOpenBut;
@@ -163,6 +168,8 @@ public class RootLayoutController {
 	private TextField op3;
 	@FXML 
 	private TextField op4;
+	@FXML 
+	private TextField op5;
 	@FXML 
 	private TextField op6;
 	@FXML 
@@ -179,17 +186,72 @@ public class RootLayoutController {
 	private Tab edit;
 	@FXML 
 	private Tab view; 
+	@FXML 
+	private CheckBox ninth;
+	@FXML 
+	private CheckBox tenth;
+	@FXML 
+	private CheckBox eleventh; 
+	@FXML 
+	private CheckBox twelveth; 
 	
 	 
 	
 	
 	
-	
-
-	
-	
 	@FXML
 	private void initialize() { //an FXML method
+		pollListLbl.setText("Open and Closed Polls");
+		questionLbl.setText("Question");
+		option1Lbl.setText("Option 1");
+		option2Lbl.setText("Option 2");
+		option3Lbl.setVisible(false);
+		option4Lbl.setVisible(false);
+		option5Lbl.setVisible(false);
+		option6Lbl.setVisible(false);
+		option7Lbl.setVisible(false);
+		option8Lbl.setVisible(false);
+		option9Lbl.setVisible(false);
+		option10Lbl.setVisible(false);
+		option1Lbl1.setVisible(false);
+		option2Lbl1.setVisible(false);
+		option3Lbl1.setVisible(false);
+		option4Lbl1.setVisible(false);
+		option5Lbl1.setVisible(false);
+		option6Lbl1.setVisible(false);
+		option7Lbl1.setVisible(false);
+		option8Lbl1.setVisible(false);
+		option9Lbl1.setVisible(false);
+		option10Lbl1.setVisible(false);
+		preview1But.setText("Preview");
+		preview2But.setText("Preview");
+		preview3But.setText("Preview");
+		preview4But.setText("Preview");
+		preview5But.setText("Preview");
+		preview6But.setText("Preview");
+		result1But.setText("Results");
+		result2But.setText("Results");
+		result3But.setText("Results");
+		result4But.setText("Results");
+		result5But.setText("Results");
+		result6But.setText("Results");
+		newOp.setText("Add Options");
+		inc.setText(">");
+		dec.setText("<");
+		inc1.setText(">");
+		dec1.setText("<");
+		save.setText("Save");
+		edit.setText("Edit");
+		view.setText("View");
+		ninth.setText("9th");
+		tenth.setText("10th");
+		eleventh.setText("11th");
+		twelveth.setText("12th");
+		
+		
+		
+		
+		
 	}
 	
 	@FXML //Subtract

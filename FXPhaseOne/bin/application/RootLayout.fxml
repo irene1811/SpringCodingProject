@@ -1,17 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RootLayoutController">
+   <top>
+      <HBox prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="146.0">
+               <children>
+                  <Label fx:id="pollListLbl" text="Label" />
+               </children>
+            </VBox>
+            <Label fx:id="pollNameLbl" prefHeight="46.0" prefWidth="232.0" text="Label" />
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <ScrollPane prefHeight="307.0" prefWidth="139.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefHeight="355.0" prefWidth="134.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="322.0">
+                     <children>
+                        <Label fx:id="poll1Lbl" alignment="TOP_CENTER" text="Label" />
+                        <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="preview1But" mnemonicParsing="false" text="Button" />
+                              <VBox prefHeight="46.0" prefWidth="8.0" />
+                              <Button fx:id="result1But" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="322.0">
+                     <children>
+                        <Label fx:id="poll2Lbl" alignment="TOP_CENTER" text="Label" />
+                        <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="preview2But" mnemonicParsing="false" text="Button" />
+                              <VBox prefHeight="46.0" prefWidth="8.0" />
+                              <Button fx:id="result2But" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="322.0">
+                     <children>
+                        <Label fx:id="poll3Lbl" alignment="TOP_CENTER" text="Label" />
+                        <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="preview3But" mnemonicParsing="false" text="Button" />
+                              <VBox prefHeight="46.0" prefWidth="8.0" />
+                              <Button fx:id="result3But" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="322.0">
+                     <children>
+                        <Label fx:id="poll4Lbl" alignment="TOP_CENTER" text="Label" />
+                        <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="preview4But" mnemonicParsing="false" text="Button" />
+                              <VBox prefHeight="46.0" prefWidth="8.0" />
+                              <Button fx:id="result4But" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="63.0" prefWidth="134.0">
+                     <children>
+                        <Label fx:id="poll5Lbl" alignment="TOP_CENTER" text="Label" />
+                        <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="preview5But" mnemonicParsing="false" text="Button" />
+                              <VBox prefHeight="46.0" prefWidth="8.0" />
+                              <Button fx:id="result5But" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="54.0" prefWidth="134.0">
+                     <children>
+                        <Label fx:id="poll6Lbl" alignment="TOP_CENTER" text="Label" />
+                        <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="preview6But" mnemonicParsing="false" text="Button" />
+                              <VBox prefHeight="46.0" prefWidth="8.0" />
+                              <Button fx:id="result6But" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </left>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="472.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="46.0" prefWidth="16.0" />
+            <VBox prefHeight="46.0" prefWidth="189.0" />
+            <Button fx:id="closeOpenBut" mnemonicParsing="false" text="Button" />
+            <VBox prefHeight="46.0" prefWidth="9.0" />
+            <Button fx:id="save" mnemonicParsing="false" text="Button" />
+            <VBox prefHeight="46.0" prefWidth="9.0" />
+            <CheckBox fx:id="ninth" mnemonicParsing="false" prefHeight="18.0" prefWidth="58.0" text="CheckBox" />
+            <CheckBox fx:id="tenth" mnemonicParsing="false" prefHeight="18.0" prefWidth="57.0" text="CheckBox" />
+            <CheckBox fx:id="eleventh" mnemonicParsing="false" prefHeight="18.0" prefWidth="53.0" text="CheckBox" />
+            <CheckBox fx:id="twelveth" mnemonicParsing="false" prefHeight="18.0" prefWidth="62.0" text="CheckBox" />
+         </children>
+      </HBox>
+   </bottom>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="view" text="Untitled Tab 1">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox prefHeight="262.0" prefWidth="458.0">
+                           <children>
+                              <HBox prefHeight="36.0" prefWidth="458.0">
+                                 <children>
+                                    <VBox prefHeight="36.0" prefWidth="13.0" />
+                                    <Label fx:id="questionLbl" prefHeight="18.0" prefWidth="83.0" text="Label" />
+                                    <VBox prefHeight="36.0" prefWidth="14.0" />
+                                    <TextField fx:id="questiontxtfld" prefHeight="26.0" prefWidth="330.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="250.0" prefWidth="458.0">
+                                 <children>
+                                    <VBox prefHeight="146.0" prefWidth="42.0" />
+                                    <VBox prefHeight="146.0" prefWidth="210.0">
+                                       <children>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option1Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op1" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option2Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op2" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option3Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op3" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option4Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op4" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option5Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op5" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option6Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op6" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option7Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op7" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option8Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op8" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option9Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op9" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option10Lbl" text="Label" />
+                                                <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                <TextField fx:id="op10" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="newOp" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="dec" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="inc" mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+          <Tab fx:id="edit" text="Untitled Tab 2">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox prefHeight="307.0" prefWidth="458.0">
+                           <children>
+                              <HBox prefHeight="36.0" prefWidth="458.0">
+                                 <children>
+                                    <VBox prefHeight="36.0" prefWidth="13.0" />
+                                    <Label fx:id="questionLbl1" prefHeight="18.0" prefWidth="83.0" text="Label" />
+                                    <VBox prefHeight="36.0" prefWidth="14.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="250.0" prefWidth="458.0">
+                                 <children>
+                                    <VBox prefHeight="146.0" prefWidth="42.0" />
+                                    <VBox prefHeight="146.0" prefWidth="210.0">
+                                       <children>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option1Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option2Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option3Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option4Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option5Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option6Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option7Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option8Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="26.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option9Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="32.0" prefWidth="210.0">
+                                             <children>
+                                                <Label fx:id="option10Lbl1" text="Label" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="dec1" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="inc1" mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </center>
 </BorderPane>

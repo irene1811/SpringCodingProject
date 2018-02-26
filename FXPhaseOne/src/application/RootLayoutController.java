@@ -223,6 +223,16 @@ public class RootLayoutController {
 		option8Lbl1.setVisible(false);
 		option9Lbl1.setVisible(false);
 		option10Lbl1.setVisible(false);
+		op1.setVisible(true);
+		op2.setVisible(true);
+		op3.setVisible(false);
+		op4.setVisible(false);
+		op5.setVisible(false);
+		op6.setVisible(false);
+		op7.setVisible(false);
+		op8.setVisible(false);
+		op9.setVisible(false);
+		op10.setVisible(false);
 		preview1But.setText("Preview");
 		preview2But.setText("Preview");
 		preview3But.setText("Preview");

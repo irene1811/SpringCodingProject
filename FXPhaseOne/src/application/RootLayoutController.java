@@ -1,10 +1,10 @@
 package application;
 /*
-APCS-A FXPhase1
-Irene Cho (Haeun)
+AP-CSA Smart Voting
+Irene Cho, Ria Gonsalves, Saachi Wadhwani
 Johns Creek High School
 Period 3
-Assignment: FXPhase 1
+Assignment: Spring Project
 */
 
 import java.io.File;

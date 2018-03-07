@@ -25,7 +25,6 @@ public class RootLayoutController {
 
 	private Main mainApp;
 	private static List<Student> studentList = new ArrayList<Student>();
-
 	
 	public void setMainApp(Main mainApp) { //setter
 		this.mainApp = mainApp;
@@ -33,7 +32,8 @@ public class RootLayoutController {
 	
 	//must have a constructor even if it is blank because JavaFX will not properly initialize
 	
-	public RootLayoutController() { }
+	public RootLayoutController() {
+	}
 
 	public static void dataCollected() {
 		String filename = "samples.csv";
@@ -195,10 +195,7 @@ public class RootLayoutController {
 	@FXML 
 	private CheckBox twelveth; 
 	
-	 
-	
-	
-	
+		
 	@FXML
 	private void initialize() { //an FXML method
 		pollListLbl.setText("Open and Closed Polls");
@@ -258,11 +255,78 @@ public class RootLayoutController {
 		eleventh.setText("11th");
 		twelveth.setText("12th");
 		
-		
-		
-		
+		//Add a new question each time you initialize.
+		questionList.add(newQuestion);
+	}
+	
+	//Make a display
+	public void displayQuestion() {
+		questiontxtfld.setText(questionList.get(Index).getQuestion());
+		op1.setText(questionList.get(Index).getOption1());
+		op2.setText(questionList.get(Index).getOption2());
+		op3.setText(questionList.get(Index).getOption3());
+		op4.setText(questionList.get(Index).getOption4());
+		op5.setText(questionList.get(Index).getOption5());
+		op6.setText(questionList.get(Index).getOption6());
+		op7.setText(questionList.get(Index).getOption7());
+		op8.setText(questionList.get(Index).getOption8());
+		op9.setText(questionList.get(Index).getOption9());
+		op10.setText(questionList.get(Index).getOption10());
 		
 	}
+	
+	
+	//create a default empty question when the admin makes a new question
+	Question tempQ = new Question();
+	
+	
+	@FXML
+	public void handleDecClick() {
+		//change index and display variable
+		Index = Index + 1;
+		//if index is greater than total, add a defStu to array list and display, change labels
+		if (index >= total) {
+			questionList.add(newQuestion);
+			setTextDef();
+			//otherwise, display the record to edit 
+		} else {
+			displayEditRecord();
+		}
+		//display record on view page
+		displayRecord();	
+	}
+	
+	
+	public void setTextDef() {
+		//set the text of the text field equal to the default vaules
+		questiontxtfld.setText("");
+		op1.setText("");
+		op2.setText("");
+		op3.setText("");
+		op4.setText("");
+		op5.setText("");
+		op6.setText("");
+		op7.setText("");
+		op8.setText("");
+		op9.setText("");
+		op10.setText("");
+	}
+	
+	//inside increment button handler, add a new blank default question
+	@FXML
+	public void handleIncClick() {
+		
+	}
+	
+	@FXML
+	public void handleSaveQuestionClick() {
+		
+	}
+	
+	//inside update button handler put text inside textfields to question class
+	//
+	//add to arraylist of questions
+	
 	
 	@FXML //Subtract
 	public void handleFirstButtonClick() {

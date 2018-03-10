@@ -25,6 +25,23 @@ public class RootLayoutController {
 
 	private Main mainApp;
 	private static List<Student> studentList = new ArrayList<Student>();
+	private static List<Poll> pollList = new ArrayList<Poll>();
+	Poll defPoll = new Poll();
+	int pollIndex = 0;
+	int polltotal;
+	int qIndex = 0;
+	int qTotal;
+	private String Question;
+	private String Option1;
+	private String Option2;
+	private String Option3;
+	private String Option4;
+	private String Option5;
+	private String Option6;
+	private String Option7;
+	private String Option8;
+	private String Option9;
+	private String Option10;
 	
 	public void setMainApp(Main mainApp) { //setter
 		this.mainApp = mainApp;
@@ -32,8 +49,7 @@ public class RootLayoutController {
 	
 	//must have a constructor even if it is blank because JavaFX will not properly initialize
 	
-	public RootLayoutController() {
-	}
+	public RootLayoutController() { }
 
 	public static void dataCollected() {
 		String filename = "samples.csv";
@@ -198,38 +214,42 @@ public class RootLayoutController {
 		
 	@FXML
 	private void initialize() { //an FXML method
+		pollList.add(defPoll);
+		polltotal = pollList.size();
+		displayDefPoll();
+		changeQuestionNumberLbl();
 		pollListLbl.setText("Open and Closed Polls");
-		questionLbl.setText("Question");
+		pollNameLbl.setVisible(false);
 		option1Lbl.setText("Option 1");
 		option2Lbl.setText("Option 2");
-		option3Lbl.setVisible(false);
-		option4Lbl.setVisible(false);
-		option5Lbl.setVisible(false);
-		option6Lbl.setVisible(false);
-		option7Lbl.setVisible(false);
-		option8Lbl.setVisible(false);
-		option9Lbl.setVisible(false);
-		option10Lbl.setVisible(false);
-		option1Lbl1.setVisible(false);
-		option2Lbl1.setVisible(false);
-		option3Lbl1.setVisible(false);
-		option4Lbl1.setVisible(false);
-		option5Lbl1.setVisible(false);
-		option6Lbl1.setVisible(false);
-		option7Lbl1.setVisible(false);
-		option8Lbl1.setVisible(false);
-		option9Lbl1.setVisible(false);
-		option10Lbl1.setVisible(false);
+		option3Lbl.setText("Option 3");
+		option4Lbl.setText("Option 4");
+		option5Lbl.setText("Option 5");
+		option6Lbl.setText("Option 6");
+		option7Lbl.setText("Option 7");
+		option8Lbl.setText("Option 8");
+		option9Lbl.setText("Option 9");
+		option10Lbl.setText("Option 10");
+		option1Lbl1.setVisible(true);
+		option2Lbl1.setVisible(true);
+		option3Lbl1.setVisible(true);
+		option4Lbl1.setVisible(true);
+		option5Lbl1.setVisible(true);
+		option6Lbl1.setVisible(true);
+		option7Lbl1.setVisible(true);
+		option8Lbl1.setVisible(true);
+		option9Lbl1.setVisible(true);
+		option10Lbl1.setVisible(true);
 		op1.setVisible(true);
 		op2.setVisible(true);
-		op3.setVisible(false);
-		op4.setVisible(false);
-		op5.setVisible(false);
-		op6.setVisible(false);
-		op7.setVisible(false);
-		op8.setVisible(false);
-		op9.setVisible(false);
-		op10.setVisible(false);
+		op3.setVisible(true);
+		op4.setVisible(true);
+		op5.setVisible(true);
+		op6.setVisible(true);
+		op7.setVisible(true);
+		op8.setVisible(true);
+		op9.setVisible(true);
+		op10.setVisible(true);
 		preview1But.setText("Preview");
 		preview2But.setText("Preview");
 		preview3But.setText("Preview");
@@ -256,84 +276,120 @@ public class RootLayoutController {
 		twelveth.setText("12th");
 		
 		//Add a new question each time you initialize.
-		questionList.add(newQuestion);
+		
+	}
+	
+	
+	//Make a display
+	public void displayDefPoll() {
+		//make poll name visibile for default poll
+		pollNameLbl.setVisible(true);
+		pollNameLbl.setText(defPoll.getPollName());
+		//add a default quesiton so default poll is not empty
+		defPoll.addDefQuestion();
+		
+		Poll tempPoll = defPoll;
+		List<Question> tempQList = tempPoll.getQuestionList();
+		qTotal = tempQList.size();
 	}
 	
 	//Make a display
 	public void displayQuestion() {
-		questiontxtfld.setText(questionList.get(Index).getQuestion());
-		op1.setText(questionList.get(Index).getOption1());
-		op2.setText(questionList.get(Index).getOption2());
-		op3.setText(questionList.get(Index).getOption3());
-		op4.setText(questionList.get(Index).getOption4());
-		op5.setText(questionList.get(Index).getOption5());
-		op6.setText(questionList.get(Index).getOption6());
-		op7.setText(questionList.get(Index).getOption7());
-		op8.setText(questionList.get(Index).getOption8());
-		op9.setText(questionList.get(Index).getOption9());
-		op10.setText(questionList.get(Index).getOption10());
+		//get the question list for the poll we are on
+		Poll tempPoll = defPoll;
+		List<Question> tempQList = tempPoll.getQuestionList();
+		
+		questiontxtfld.setText(tempQList.get(qIndex).getQuestion());
+		op1.setText(tempQList.get(qIndex).getOption1());
+		op2.setText(tempQList.get(qIndex).getOption2());
+		op3.setText(tempQList.get(qIndex).getOption3());
+		op4.setText(tempQList.get(qIndex).getOption4());
+		op5.setText(tempQList.get(qIndex).getOption5());
+		op6.setText(tempQList.get(qIndex).getOption6());
+		op7.setText(tempQList.get(qIndex).getOption7());
+		op8.setText(tempQList.get(qIndex).getOption8());
+		op9.setText(tempQList.get(qIndex).getOption9());
+		op10.setText(tempQList.get(qIndex).getOption10());
 		
 	}
 	
 	
 	//create a default empty question when the admin makes a new question
-	Question tempQ = new Question();
-	
+
+	@FXML
+	public void handleIncClick() {
+		//add stuff that changes quetion number
+		qIndex = qIndex + 1;
+		//if index is greater than total, add a defStu to array list and display, change labels
+		Poll tempPoll = defPoll;
+		if (qIndex >= qTotal) {
+			tempPoll.addDefQuestion();
+		}
+		//display question at the index 
+		displayQuestion();
+		changeQuestionNumberLbl();
+	}
 	
 	@FXML
 	public void handleDecClick() {
-		//change index and display variable
-		Index = Index + 1;
-		//if index is greater than total, add a defStu to array list and display, change labels
-		if (index >= total) {
-			questionList.add(newQuestion);
-			setTextDef();
-			//otherwise, display the record to edit 
+		//check if index is already 0
+		if (qIndex == 0) {
+			displayQuestion();
+			changeQuestionNumberLbl();
+		//otherwise change index and display variable
 		} else {
-			displayEditRecord();
+			qIndex = qIndex - 1;
+			//display record to edit and record on the view page
+			displayQuestion();
+			changeQuestionNumberLbl();
 		}
-		//display record on view page
-		displayRecord();	
 	}
 	
 	
-	public void setTextDef() {
-		//set the text of the text field equal to the default vaules
-		questiontxtfld.setText("");
-		op1.setText("");
-		op2.setText("");
-		op3.setText("");
-		op4.setText("");
-		op5.setText("");
-		op6.setText("");
-		op7.setText("");
-		op8.setText("");
-		op9.setText("");
-		op10.setText("");
+	public void changeQuestionNumberLbl() {
+		//Poll tempPoll = defPoll;
+		List<Question> tempQList = Poll.getQuestionList();
+		int disp = qIndex + 1;
+		//get the total size of the array list and then change the labels
+		qTotal = tempQList.size();
+		questionLbl.setText("Question " + disp + " of " + qTotal);
 	}
 	
 	//inside increment button handler, add a new blank default question
-	@FXML
-	public void handleIncClick() {
-		
-	}
-	
-	@FXML
-	public void handleSaveQuestionClick() {
-		
-	}
-	
-	//inside update button handler put text inside textfields to question class
-	//
-	//add to arraylist of questions
-	
-	
-	@FXML //Subtract
-	public void handleFirstButtonClick() {
 
-	}
-	@FXML //Add
-	public void handleSecondButtonClick() {
-		
-	}
+	
+	//inside increment button handler, add a new blank default question	
+	@FXML
+	public void handleSaveClick() {
+		//get the text of each text field, set it equal to the name var, and put it in the object
+		Question = String.valueOf(questiontxtfld.getText());
+		questiontxtfld.setText(Question);
+		Option1 = String.valueOf(op1.getText());
+		op1.setText(Option1);
+		Option2 = String.valueOf(op2.getText());
+		op2.setText(Option2);
+		Option3 = String.valueOf(op3.getText());
+		op3.setText(Option3);
+		Option4 = String.valueOf(op4.getText());
+		op4.setText(Option4);
+		Option5 = String.valueOf(op5.getText());
+		op5.setText(Option5);
+		Option6 = String.valueOf(op6.getText());
+		op6.setText(Option6);
+		Option7 = String.valueOf(op7.getText());
+		op7.setText(Option7);
+		Option8 = String.valueOf(op8.getText());
+		op8.setText(Option8);
+		Option9 = String.valueOf(op9.getText());
+		op9.setText(Option9);
+		Option10 = String.valueOf(op10.getText());
+		op10.setText(Option10);
+
+		//make the temporary student class and add it to the list
+		Question tempQuestion =  new Question(Question, Option1, Option2, Option3, Option4, Option5, Option6, Option7, Option8, Option9, Option10);
+		List<Question> tempQList = Poll.getQuestionList();
+		tempQList.set(qIndex, tempQuestion);
+
+	}	
+
 }

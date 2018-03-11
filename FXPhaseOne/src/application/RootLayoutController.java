@@ -194,10 +194,7 @@ public class RootLayoutController {
 	private CheckBox eleventh; 
 	@FXML 
 	private CheckBox twelveth; 
-	
-	 
-	
-	
+
 	
 	@FXML
 	private void initialize() { //an FXML method
@@ -256,12 +253,7 @@ public class RootLayoutController {
 		ninth.setText("9th");
 		tenth.setText("10th");
 		eleventh.setText("11th");
-		twelveth.setText("12th");
-		
-		
-		
-		
-		
+		twelveth.setText("12th");	
 	}
 	
 	@FXML //Subtract

@@ -18,8 +18,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
+
 
 public class RootLayoutController {
 
@@ -77,11 +79,40 @@ public class RootLayoutController {
 		System.out.println(studentList.get(0).getGrade());
 		System.out.println(studentList.get(0).getPassword());
 	}
-	
+	@FXML 
+	private Tab loginTb;
+	@FXML
+	private Tab adminTb; 
+	@FXML 
+	private Tab studentTb; 
+	@FXML 
+	private Label studentloginLbl;
+	@FXML 
+	private Label adminloginLbl;
+	@FXML 
+	private Label studentUsenmLbl; 
+	@FXML 
+	private Label studentPassLbl; 
+	@FXML 
+	private TextField studentUsenmTxtfld;
+	@FXML 
+	private TextField studentPassTxtfld; 
+	@FXML 
+	private Label adminUsenmLbl; 
+	@FXML 
+	private Label adminPassLbl; 
+	@FXML 
+	private TextField adminUsenmTxtfld;
+	@FXML 
+	private TextField adminPassTxtfld; 
 	@FXML
 	private Label pollListLbl;
 	@FXML 
 	private Label pollNameLbl;
+	@FXML
+	private Label pollListLbl1;
+	@FXML 
+	private Label pollNameLbl1;
 	@FXML 
 	private Label poll1Lbl;
 	@FXML 
@@ -173,6 +204,10 @@ public class RootLayoutController {
 	@FXML 
 	private Button dec1;
 	@FXML 
+	private Button inc2;
+	@FXML 
+	private Button dec2;
+	@FXML 
 	private Button save;
 	@FXML 
 	private Button closeOpenBut;
@@ -210,13 +245,48 @@ public class RootLayoutController {
 	private CheckBox eleventh; 
 	@FXML 
 	private CheckBox twelveth; 
-<<<<<<< HEAD
-
+	@FXML 
+	private Label option1Lbl2;
+	@FXML 
+	private Label option2Lbl2;
+	@FXML 
+	private Label option3Lbl2;
+	@FXML 
+	private Label option4Lbl2;
+	@FXML 
+	private Label option5Lbl2;
+	@FXML 
+	private Label option6Lbl2;
+	@FXML 
+	private Label option7Lbl2;
+	@FXML 
+	private Label option8Lbl2;
+	@FXML 
+	private Label option9Lbl2;
+	@FXML 
+	private Label option10Lbl2;
+	@FXML  
+	private RadioButton opt1;
+	@FXML  
+	private RadioButton opt2;
+	@FXML  
+	private RadioButton opt3;
+	@FXML  
+	private RadioButton opt4;
+	@FXML  
+	private RadioButton opt5;
+	@FXML  
+	private RadioButton opt6;
+	@FXML  
+	private RadioButton opt7;
+	@FXML  
+	private RadioButton opt8;
+	@FXML  
+	private RadioButton opt9;
+	@FXML  
+	private RadioButton opt10;
 	
-=======
 	
-		
->>>>>>> branch 'master' of https://github.com/irene1811/SpringCodingProject.git
 	@FXML
 	private void initialize() { //an FXML method
 		pollList.add(defPoll);
@@ -278,14 +348,12 @@ public class RootLayoutController {
 		ninth.setText("9th");
 		tenth.setText("10th");
 		eleventh.setText("11th");
-<<<<<<< HEAD
 		twelveth.setText("12th");	
-=======
+
 		twelveth.setText("12th");
 		
 		//Add a new question each time you initialize.
 		
->>>>>>> branch 'master' of https://github.com/irene1811/SpringCodingProject.git
 	}
 	
 	

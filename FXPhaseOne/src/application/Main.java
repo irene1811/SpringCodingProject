@@ -13,13 +13,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.TabPane;
 
 
 public class Main extends Application {
 	//Private fields to hold one stage and root layout of our main window
 	private Stage primaryStage; //where it is "handle"
-	private BorderPane rootLayout; //baseline layout
+	private TabPane rootLayout; //baseline layout
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -54,7 +54,7 @@ public class Main extends Application {
 			loader.setLocation(Main.class.getResource("/application/RootLayout.FXML"));
 			
 			//Sets root layout field, casting as BoarderPane, injected via FXML
-			rootLayout = (BorderPane) loader.load();
+			rootLayout = (TabPane) loader.load();
 			
 			//Sets scene object to rootLayout
 			Scene scene = new Scene(rootLayout);

@@ -365,6 +365,7 @@
                </center>
             </BorderPane>
          </content>
+<<<<<<< HEAD
     </Tab>
       <Tab text="Untitled Tab 3">
          <content>
@@ -373,6 +374,34 @@
                   <HBox prefHeight="28.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                      <children>
                         <VBox alignment="CENTER" prefHeight="47.0" prefWidth="146.0">
+=======
+      </ScrollPane>
+   </left>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="472.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="46.0" prefWidth="16.0" />
+            <VBox prefHeight="46.0" prefWidth="1.0" />
+            <Button fx:id="closeOpenBut" mnemonicParsing="false" text="Open/Close Poll" />
+            <VBox prefHeight="46.0" prefWidth="9.0" />
+            <Button fx:id="save" mnemonicParsing="false" onAction="#handleSaveClick" prefHeight="27.0" prefWidth="130.0" text="Save Question" />
+            <VBox prefHeight="46.0" prefWidth="9.0" />
+            <CheckBox fx:id="ninth" mnemonicParsing="false" prefHeight="18.0" prefWidth="58.0" text="CheckBox" />
+            <CheckBox fx:id="tenth" mnemonicParsing="false" prefHeight="18.0" prefWidth="57.0" text="CheckBox" />
+            <CheckBox fx:id="eleventh" mnemonicParsing="false" prefHeight="18.0" prefWidth="53.0" text="CheckBox" />
+            <CheckBox fx:id="twelveth" mnemonicParsing="false" prefHeight="18.0" prefWidth="62.0" text="CheckBox" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="view" text="Untitled Tab 1">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox prefHeight="262.0" prefWidth="458.0">
+>>>>>>> branch 'master' of https://github.com/irene1811/SpringCodingProject.git
                            <children>
                               <Label fx:id="pollListLbl1" text="Label" />
                            </children>
@@ -388,14 +417,34 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="50.0" prefWidth="322.0">
                                  <children>
+<<<<<<< HEAD
                                     <Label fx:id="poll1Lbl1" alignment="TOP_CENTER" text="Label" />
                                     <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
+=======
+                                    <VBox prefHeight="36.0" prefWidth="13.0" />
+                                    <Label fx:id="questionLbl" prefHeight="18.0" prefWidth="83.0" text="Question" />
+                                    <VBox prefHeight="36.0" prefWidth="14.0" />
+                                    <TextField fx:id="questiontxtfld" prefHeight="26.0" prefWidth="330.0" text="Question" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="250.0" prefWidth="458.0">
+                                 <children>
+                                    <VBox prefHeight="146.0" prefWidth="42.0" />
+                                    <VBox prefHeight="146.0" prefWidth="210.0">
+>>>>>>> branch 'master' of https://github.com/irene1811/SpringCodingProject.git
                                        <children>
                                           <Button fx:id="preview1But1" mnemonicParsing="false" text="Button" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
                                           <Button fx:id="result1But1" mnemonicParsing="false" text="Button" />
                                        </children>
+<<<<<<< HEAD
                                     </HBox>
+=======
+                                    </VBox>
+                                    <Button fx:id="newOp" mnemonicParsing="false" text="New Options" />
+                                    <Button fx:id="dec" mnemonicParsing="false" onAction="#handleDecClick" text="Dec" />
+                                    <Button fx:id="inc" mnemonicParsing="false" onAction="#handleIncClick" text="Inc" />
+>>>>>>> branch 'master' of https://github.com/irene1811/SpringCodingProject.git
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="50.0" prefWidth="322.0">

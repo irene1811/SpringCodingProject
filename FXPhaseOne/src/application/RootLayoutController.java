@@ -86,6 +86,8 @@ public class RootLayoutController {
 	@FXML 
 	private Tab studentTb; 
 	@FXML 
+	private Tab edit1;
+	@FXML 
 	private Label studentloginLbl;
 	@FXML 
 	private Label adminloginLbl;
@@ -245,6 +247,8 @@ public class RootLayoutController {
 	private CheckBox eleventh; 
 	@FXML 
 	private CheckBox twelveth; 
+	@FXML 
+	private Label questionLbl2;
 	@FXML 
 	private Label option1Lbl2;
 	@FXML 

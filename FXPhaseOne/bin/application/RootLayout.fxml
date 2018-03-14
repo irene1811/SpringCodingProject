@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
@@ -28,13 +29,15 @@
                                     <Label fx:id="studentUsenmLbl" text="Label" />
                                     <VBox prefHeight="26.0" prefWidth="11.0" />
                                     <TextField fx:id="studentUsenmTxtfld" />
+                                    <VBox prefHeight="26.0" prefWidth="26.0" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="25.0" prefWidth="298.0">
                                  <children>
                                     <Label fx:id="studentPassLbl" text="Label" />
                                     <VBox prefHeight="26.0" prefWidth="11.0" />
-                                    <TextField fx:id="studentPassTxtfld" />
+                                    <PasswordField fx:id="studentPassTxtfld" />
+                                    <Button fx:id="enterStu" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="Button" />
                                  </children>
                               </HBox>
                            </children>
@@ -47,13 +50,15 @@
                                     <Label fx:id="adminUsenmLbl" text="Label" />
                                     <VBox prefHeight="26.0" prefWidth="11.0" />
                                     <TextField fx:id="adminUsenmTxtfld" />
+                                    <VBox prefHeight="26.0" prefWidth="26.0" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="25.0" prefWidth="298.0">
                                  <children>
                                     <Label fx:id="adminPassLbl" text="Label" />
                                     <VBox prefHeight="26.0" prefWidth="11.0" />
-                                    <TextField fx:id="adminPassTxtfld" />
+                                    <PasswordField fx:id="adminPassTxtfld" />
+                                    <Button fx:id="enterAdmin" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" text="Button" />
                                  </children>
                               </HBox>
                            </children>

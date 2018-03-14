@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
@@ -98,7 +99,7 @@ public class RootLayoutController {
 	@FXML 
 	private TextField studentUsenmTxtfld;
 	@FXML 
-	private TextField studentPassTxtfld; 
+	private PasswordField studentPassTxtfld; 
 	@FXML 
 	private Label adminUsenmLbl; 
 	@FXML 
@@ -106,7 +107,7 @@ public class RootLayoutController {
 	@FXML 
 	private TextField adminUsenmTxtfld;
 	@FXML 
-	private TextField adminPassTxtfld; 
+	private PasswordField adminPassTxtfld; 
 	@FXML
 	private Label pollListLbl;
 	@FXML 
@@ -171,6 +172,10 @@ public class RootLayoutController {
 	private Label option9Lbl1;
 	@FXML 
 	private Label option10Lbl1;
+	@FXML 
+	private Button enterStu;
+	@FXML 
+	private Button enterAdmin;
 	@FXML 
 	private Button preview1But;
 	@FXML 
@@ -297,6 +302,12 @@ public class RootLayoutController {
 		polltotal = pollList.size();
 		displayDefPoll();
 		changeQuestionNumberLbl();
+		studentloginLbl.setText("Student Login");
+		adminloginLbl.setText("Admin Login");
+		studentUsenmLbl.setText("Username");
+		adminUsenmLbl.setText("Username");
+		studentPassLbl.setText("Password");
+		adminPassLbl.setText("Password");
 		pollListLbl.setText("Open and Closed Polls");
 		pollNameLbl.setVisible(false);
 		option1Lbl.setText("Option 1");
@@ -353,8 +364,7 @@ public class RootLayoutController {
 		tenth.setText("10th");
 		eleventh.setText("11th");
 		twelveth.setText("12th");	
-
-		twelveth.setText("12th");
+		
 		
 		//Add a new question each time you initialize.
 		

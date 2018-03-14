@@ -76,7 +76,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="47.0" prefWidth="146.0">
                            <children>
-                              <Label fx:id="pollListLbl" text="Label" />
+                              <Label fx:id="pollListLbl" prefHeight="18.0" prefWidth="46.0" text="Label" />
                            </children>
                         </VBox>
                         <Label fx:id="pollNameLbl" prefHeight="46.0" prefWidth="232.0" text="Label" />
@@ -171,7 +171,7 @@
                         <VBox prefHeight="59.0" prefWidth="109.0" />
                         <Button fx:id="closeOpenBut" mnemonicParsing="false" text="Button" />
                         <VBox prefHeight="46.0" prefWidth="9.0" />
-                        <Button fx:id="save" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="save" mnemonicParsing="false" onAction="#handleSaveClick" text="Button" />
                         <VBox prefHeight="46.0" prefWidth="9.0" />
                         <CheckBox fx:id="ninth" mnemonicParsing="false" prefHeight="18.0" prefWidth="58.0" text="CheckBox" />
                         <CheckBox fx:id="tenth" mnemonicParsing="false" prefHeight="18.0" prefWidth="57.0" text="CheckBox" />
@@ -268,15 +268,15 @@
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <Label fx:id="option10Lbl" text="Label" />
-                                                            <VBox prefHeight="32.0" prefWidth="27.0" />
+                                                            <VBox prefHeight="26.0" prefWidth="21.0" />
                                                             <TextField fx:id="op10" />
                                                          </children>
                                                       </HBox>
                                                    </children>
                                                 </VBox>
                                                 <Button fx:id="newOp" mnemonicParsing="false" text="Button" />
-                                                <Button fx:id="dec" mnemonicParsing="false" text="Button" />
-                                                <Button fx:id="inc" mnemonicParsing="false" text="Button" />
+                                                <Button fx:id="dec" mnemonicParsing="false" onAction="#handleDecClick" text="Button" />
+                                                <Button fx:id="inc" mnemonicParsing="false" onAction="#handleIncClick" text="Button" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -379,7 +379,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="47.0" prefWidth="146.0">
                            <children>
-                              <Label fx:id="pollListLbl1" text="Label" />
+                              <Label fx:id="pollListLbl1" text="Poll List" />
                            </children>
                         </VBox>
                         <Label fx:id="pollNameLbl1" prefHeight="46.0" prefWidth="232.0" text="Label" />

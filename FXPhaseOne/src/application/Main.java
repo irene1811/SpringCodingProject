@@ -54,7 +54,7 @@ public class Main extends Application {
 			loader.setLocation(Main.class.getResource("/application/RootLayout.FXML"));
 			
 			//Sets root layout field, casting as BoarderPane, injected via FXML
-			rootLayout = (TabPane) loader.load();
+			rootLayout = (TabPane) loader.load(); 
 			
 			//Sets scene object to rootLayout
 			Scene scene = new Scene(rootLayout);

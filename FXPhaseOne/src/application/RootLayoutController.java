@@ -294,7 +294,8 @@ public class RootLayoutController {
 	private RadioButton opt9;
 	@FXML  
 	private RadioButton opt10;
-	
+	@FXML 
+	private TextField chngPollNm;
 	
 	@FXML
 	private void initialize() { //an FXML method
@@ -340,6 +341,16 @@ public class RootLayoutController {
 		op8.setVisible(false);
 		op9.setVisible(false);
 		op10.setVisible(false);
+		option1Lbl.setVisible(true);
+		option2Lbl.setVisible(false);
+		option3Lbl.setVisible(false);
+		option4Lbl.setVisible(false);
+		option5Lbl.setVisible(false);
+		option6Lbl.setVisible(false);
+		option7Lbl.setVisible(false);
+		option8Lbl.setVisible(false);
+		option9Lbl.setVisible(false);
+		option10Lbl.setVisible(false);
 		preview1But.setText("Preview");
 		preview2But.setText("Preview");
 		preview3But.setText("Preview");
@@ -364,6 +375,9 @@ public class RootLayoutController {
 		tenth.setText("10th");
 		eleventh.setText("11th");
 		twelveth.setText("12th");	
+		
+		
+		
 		
 		
 		//Add a new question each time you initialize.
@@ -481,6 +495,38 @@ public class RootLayoutController {
 		List<Question> tempQList = Poll.getQuestionList();
 		tempQList.set(qIndex, tempQuestion);
 
+		//Login Methods
+	@FXML	
+	public void handleLogin() {
+		String user; 
+		String pass;
+		
+		user=adminUsenmTxtfld.getText();
+		pass=adminPassTxtfld.getText();
+		
+		if (user.equals("bob")) {
+			
+			
+
+		//if(user.equals("blue") && pass.equals("bob") ){
+		  //  adminloginLbl.setText("you in");
+		//}
+		//else{
+		  //  adminUsenmTxtfld.setText("Please try again.");
+		}   
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	}	
 
 }

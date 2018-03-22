@@ -79,7 +79,8 @@
                               <Label fx:id="pollListLbl" prefHeight="18.0" prefWidth="46.0" text="Label" />
                            </children>
                         </VBox>
-                        <Label fx:id="pollNameLbl" prefHeight="46.0" prefWidth="232.0" text="Label" />
+                        <Label fx:id="pollNameLbl" prefHeight="28.0" prefWidth="161.0" text="Label" />
+                        <TextField fx:id="chngPollNm" />
                      </children>
                   </HBox>
                </top>

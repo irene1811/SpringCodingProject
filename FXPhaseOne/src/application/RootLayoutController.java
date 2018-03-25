@@ -29,6 +29,7 @@ public class RootLayoutController {
 	private Main mainApp;
 	private static List<Student> studentList = new ArrayList<Student>();
 	private static List<Poll> pollList = new ArrayList<Poll>();
+	private static List<Question> questionList = new ArrayList<Question>();
 	Poll defPoll = new Poll();
 	int pollIndex = 0;
 	int polltotal;
@@ -294,14 +295,13 @@ public class RootLayoutController {
 	private RadioButton opt9;
 	@FXML  
 	private RadioButton opt10;
+	@FXML
+	private Button newPoll;
 	
 	
 	@FXML
 	private void initialize() { //an FXML method
-		pollList.add(defPoll);
-		polltotal = pollList.size();
-		displayDefPoll();
-		changeQuestionNumberLbl();
+		
 		studentloginLbl.setText("Student Login");
 		adminloginLbl.setText("Admin Login");
 		studentUsenmLbl.setText("Username");
@@ -366,28 +366,43 @@ public class RootLayoutController {
 		twelveth.setText("12th");	
 		
 		
-		//Add a new question each time you initialize.
-		
-	}
-	
-	
-	//Make a display
-	public void displayDefPoll() {
+		//add a new poll to pollList
+		pollList.add(defPoll);
+		//find out new pollSize
+		polltotal = pollList.size();
+		//Add a new question to the list of questions inside poll
+		pollList.get(pollIndex).addDefQuestion();
 		//make poll name visibile for default poll
 		pollNameLbl.setVisible(true);
-		pollNameLbl.setText(defPoll.getPollName());
-		//add a default quesiton so default poll is not empty
-		defPoll.addDefQuestion();
+		pollList.get(pollIndex).setPollName("Poll" + polltotal);
+		pollNameLbl.setText(pollList.get(pollIndex).getPollName());
+	
 		
-		Poll tempPoll = defPoll;
+		//updating qTotal
+		Poll tempPoll = pollList.get(pollIndex);
 		List<Question> tempQList = tempPoll.getQuestionList();
 		qTotal = tempQList.size();
+
+		changeQuestionNumberLbl();
 	}
+	
+//	//Make a display
+//	public void displayDefPoll() {
+//		//make poll name visibile for default poll
+//		pollList.add(defPoll);
+//		polltotal = pollList.size();
+//		//make poll name visibile for default poll
+//		pollNameLbl.setVisible(true);
+//		pollNameLbl.setText(pollList.get(pollIndex).getPollName());
+//		Poll tempPoll = pollList.get(pollIndex);
+//		List<Question> tempQList = tempPoll.getQuestionList();
+//		qTotal = tempQList.size();
+//	}
 	
 	//Make a display
 	public void displayQuestion() {
 		//get the question list for the poll we are on
-		Poll tempPoll = defPoll;
+		Poll tempPoll = pollList.get(pollIndex);
 		List<Question> tempQList = tempPoll.getQuestionList();
 		
 		questiontxtfld.setText(tempQList.get(qIndex).getQuestion());
@@ -401,7 +416,14 @@ public class RootLayoutController {
 		op8.setText(tempQList.get(qIndex).getOption8());
 		op9.setText(tempQList.get(qIndex).getOption9());
 		op10.setText(tempQList.get(qIndex).getOption10());
-		
+	}
+	public void changeQuestionNumberLbl() {
+		Poll tempPoll = pollList.get(pollIndex);
+		List<Question> tempQList = tempPoll.getQuestionList();
+		int disp = qIndex + 1;
+		//get the total size of the array list and then change the labels
+		qTotal = tempQList.size();
+		questionLbl.setText("Question " + disp + " of " + qTotal);
 	}
 	
 	
@@ -409,10 +431,12 @@ public class RootLayoutController {
 
 	@FXML
 	public void handleIncClick() {
+		save();
 		//add stuff that changes quetion number
 		qIndex = qIndex + 1;
 		//if index is greater than total, add a defStu to array list and display, change labels
-		Poll tempPoll = defPoll;
+		pollListLbl.setText(Integer.toString(qIndex)); //delete later
+		Poll tempPoll = pollList.get(pollIndex);
 		if (qIndex >= qTotal) {
 			tempPoll.addDefQuestion();
 		}
@@ -420,6 +444,8 @@ public class RootLayoutController {
 		displayQuestion();
 		changeQuestionNumberLbl();
 	}
+	
+	
 	
 	@FXML
 	public void handleDecClick() {
@@ -437,21 +463,14 @@ public class RootLayoutController {
 	}
 	
 	
-	public void changeQuestionNumberLbl() {
-		//Poll tempPoll = defPoll;
-		List<Question> tempQList = Poll.getQuestionList();
-		int disp = qIndex + 1;
-		//get the total size of the array list and then change the labels
-		qTotal = tempQList.size();
-		questionLbl.setText("Question " + disp + " of " + qTotal);
-	}
+	
 	
 	//inside increment button handler, add a new blank default question
 
 	
 	//inside increment button handler, add a new blank default question	
-	@FXML
-	public void handleSaveClick() {
+	
+	public void save() {
 		//get the text of each text field, set it equal to the name var, and put it in the object
 		Question = String.valueOf(questiontxtfld.getText());
 		questiontxtfld.setText(Question);
@@ -475,12 +494,44 @@ public class RootLayoutController {
 		op9.setText(Option9);
 		Option10 = String.valueOf(op10.getText());
 		op10.setText(Option10);
-
+		
 		//make the temporary student class and add it to the list
 		Question tempQuestion =  new Question(Question, Option1, Option2, Option3, Option4, Option5, Option6, Option7, Option8, Option9, Option10);
-		List<Question> tempQList = Poll.getQuestionList();
-		tempQList.set(qIndex, tempQuestion);
-
+		Poll tempPoll = pollList.get(pollIndex);
+		tempPoll.getQuestionList().set(qIndex, tempQuestion);
+	}
+	@FXML
+	public void handleSaveClick() {
+		save();
 	}	
+	
+	//create another poll
+	@FXML
+	public void createNewPoll() {
+		
+		//add a new poll to pollList
+		pollList.add(new Poll());
+		//fix indexer
+		pollIndex = pollIndex + 1;
+		//find out new pollSize
+		polltotal = pollList.size();
+		//Add a new question to the list of questions inside poll
+		pollList.get(pollIndex).addDefQuestion();
+		pollNameLbl.setText(pollList.get(pollIndex).getPollName());
+		Poll tempPoll = pollList.get(pollIndex);
+		List<Question> tempQList = tempPoll.getQuestionList();
+		qTotal = tempQList.size();
+		qIndex = 0;
+		changeQuestionNumberLbl();
+		displayQuestion();
+		
+	
+		
+
+		
+	}
+	
+	
+	
 
 }

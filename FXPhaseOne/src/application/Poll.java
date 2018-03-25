@@ -80,11 +80,11 @@ public class Poll {
 		Open = open;
 	}
 
-	public static List<Question> getQuestionList() {
+	public List<Question> getQuestionList() {
 		return questionList;
 	}
 
-	public static void setQuestionList(List<Question> questionList) {
+	public void setQuestionList(List<Question> questionList) {
 		Poll.questionList = questionList;
 	}
 	

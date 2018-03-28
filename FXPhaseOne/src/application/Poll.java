@@ -89,7 +89,7 @@ public class Poll {
 	}
 	
 	public void addDefQuestion() {
-		Question defQuestion = new Question();
-		questionList.add(defQuestion);
+		questionList.add(new Question());
+		
 	}
 }

@@ -10,7 +10,7 @@ public class Poll {
 	boolean Tenth;
 	boolean Eleventh;
 	boolean Twelveth;
-	private static List<Question> questionList;
+	//private static List<Question> questionList;
 	
 	public Poll() {
 		pollName = "New Poll";
@@ -19,7 +19,7 @@ public class Poll {
 		Tenth = true;
 		Eleventh = true;
 		Twelveth = true;
-		questionList = new ArrayList<Question>();
+		//questionList = new ArrayList<Question>();
 	}
 	
 	public Poll(String pName, boolean op, boolean nin, boolean ten, boolean ele, boolean twe, List<Question> qlist) {
@@ -29,7 +29,7 @@ public class Poll {
 		this.Tenth = ten;
 		this.Eleventh = ele;
 		this.Twelveth = twe;
-		this.questionList = qlist;
+		//this.questionList = qlist;
 	}
 
 	public String getPollName() {
@@ -80,16 +80,16 @@ public class Poll {
 		Open = open;
 	}
 
-	public List<Question> getQuestionList() {
-		return questionList;
-	}
-
-	public void setQuestionList(List<Question> questionList) {
-		Poll.questionList = questionList;
-	}
-	
-	public void addDefQuestion() {
-		questionList.add(new Question());
+//	public List<Question> getQuestionList() {
+//		return questionList;
+//	}
+//
+//	public void setQuestionList(List<Question> questionList) {
+//		Poll.questionList = questionList;
+//	}
+//	
+//	public void addDefQuestion() {
+//		questionList.add(new Question());
 		
-	}
+//	}
 }

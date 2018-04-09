@@ -383,7 +383,7 @@
                                     <Label fx:id="poll1Lbl1" alignment="TOP_CENTER" text="Label" />
                                     <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="preview1But1" mnemonicParsing="false" text="Button" />
+                                          <Button fx:id="preview1But1" mnemonicParsing="false" onAction="#handleS0" text="View" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
                                        </children>
                                     </HBox>
@@ -394,7 +394,7 @@
                                     <Label fx:id="poll2Lbl1" alignment="TOP_CENTER" text="Label" />
                                     <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="preview2But1" mnemonicParsing="false" text="Button" />
+                                          <Button fx:id="preview2But1" mnemonicParsing="false" onAction="#handleS1" text="View" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
                                        </children>
                                     </HBox>
@@ -405,7 +405,7 @@
                                     <Label fx:id="poll3Lbl1" alignment="TOP_CENTER" text="Label" />
                                     <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="preview3But1" mnemonicParsing="false" text="Button" />
+                                          <Button fx:id="preview3But1" mnemonicParsing="false" onAction="#handleS2" text="View" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
                                        </children>
                                     </HBox>
@@ -416,7 +416,7 @@
                                     <Label fx:id="poll4Lbl1" alignment="TOP_CENTER" text="Label" />
                                     <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="preview4But1" mnemonicParsing="false" text="Button" />
+                                          <Button fx:id="preview4But1" mnemonicParsing="false" onAction="#handleS3" text="View" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
                                        </children>
                                     </HBox>
@@ -427,7 +427,7 @@
                                     <Label fx:id="poll5Lbl1" alignment="TOP_CENTER" text="Label" />
                                     <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="preview5But1" mnemonicParsing="false" text="Button" />
+                                          <Button fx:id="preview5But1" mnemonicParsing="false" onAction="#handleS4" text="View" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
                                        </children>
                                     </HBox>
@@ -438,7 +438,7 @@
                                     <Label fx:id="poll6Lbl1" alignment="TOP_CENTER" text="Label" />
                                     <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="preview6But1" mnemonicParsing="false" text="Button" />
+                                          <Button fx:id="preview6But1" mnemonicParsing="false" onAction="#handleS5" text="View" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
                                        </children>
                                     </HBox>
@@ -461,7 +461,6 @@
                                           <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="458.0">
                                              <children>
                                                 <VBox prefHeight="36.0" prefWidth="13.0" />
-                                                <Label fx:id="questionLbl2" prefHeight="18.0" prefWidth="83.0" text="Label" />
                                                 <VBox prefHeight="36.0" prefWidth="14.0" />
                                                 <Label fx:id="question2" prefHeight="18.0" prefWidth="83.0" text="Label" />
                                              </children>

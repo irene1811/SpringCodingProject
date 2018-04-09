@@ -247,8 +247,6 @@ public class RootLayoutController {
 	@FXML 
 	private Tab view; 
 	@FXML 
-	private Label questionLbl2;
-	@FXML 
 	private Label option1Lbl2;
 	@FXML 
 	private Label option2Lbl2;
@@ -266,6 +264,30 @@ public class RootLayoutController {
 	private Label option8Lbl2;
 	@FXML
 	private Label question2;
+	@FXML 
+	private Label poll1Lbl1;
+	@FXML 
+	private Label poll2Lbl1;
+	@FXML 
+	private Label poll3Lbl1;
+	@FXML 
+	private Label poll4Lbl1;
+	@FXML 
+	private Label poll5Lbl1;
+	@FXML 
+	private Label poll6Lbl1;
+	@FXML 
+	private Button preview1But1;
+	@FXML 
+	private Button preview2But1;
+	@FXML 
+	private Button preview3But1;
+	@FXML 
+	private Button preview4But1;
+	@FXML 
+	private Button preview5But1;
+	@FXML 
+	private Button preview6But1;
 	@FXML  
 	private RadioButton opt1;
 	@FXML  
@@ -463,21 +485,27 @@ public class RootLayoutController {
 		//poll labels start at 1, but pollIndex starts at 0
 		if(pollIndex == 0) {
 			poll1Lbl.setText(tempPoll.getPollName());
+			poll1Lbl1.setText(tempPoll.getPollName());
 		}
 		if(pollIndex == 1) {
 			poll2Lbl.setText(tempPoll.getPollName());
+			poll2Lbl1.setText(tempPoll.getPollName());
 		}
 		if(pollIndex == 2) {
 			poll3Lbl.setText(tempPoll.getPollName());
+			poll3Lbl1.setText(tempPoll.getPollName());
 		}
 		if(pollIndex == 3) {
 			poll4Lbl.setText(tempPoll.getPollName());
+			poll4Lbl1.setText(tempPoll.getPollName());
 		}
 		if(pollIndex == 4) {
 			poll5Lbl.setText(tempPoll.getPollName());
+			poll5Lbl1.setText(tempPoll.getPollName());
 		}
 		if(pollIndex == 5) {
 			poll6Lbl.setText(tempPoll.getPollName());
+			poll6Lbl1.setText(tempPoll.getPollName());
 		}
 		displayQuestionView();
 		displayStudentView();
@@ -598,8 +626,44 @@ public class RootLayoutController {
 		pollIndex = 5;
 		previewButtons();
 	}
-	
-	
+	public void studentPollLists() {
+		//set question Index to 0 so the first question is shown.
+		qIndex = 0;
+		setPollName();
+		//inside the changeQuestionLbl method qTotal will be updated
+		displayQuestion();
+		displayStudentView();
+	}
+	@FXML 
+	public void handleS0() {
+		pollIndex=0;
+		studentPollLists();
+	}
+	@FXML 
+	public void handleS1() {
+		pollIndex=1;
+		studentPollLists();
+	}
+	@FXML 
+	public void handleS2() {
+		pollIndex=2;
+		studentPollLists();
+	}
+	@FXML 
+	public void handleS3() {
+		pollIndex=3;
+		studentPollLists();
+	}
+	@FXML 
+	public void handleS4() {
+		pollIndex=4;
+		studentPollLists();
+	}
+	@FXML 
+	public void handleS5() {
+		pollIndex=5;
+		studentPollLists();
+	}
 	
 	//Make a display
 	public void displayQuestion() {
@@ -619,14 +683,14 @@ public class RootLayoutController {
 		op8.setText(tempQList.get(qIndex).getOption8());
 	}
 	
-	//this isn't working and idk why pls help!!!!!!!!!!!!! its supposed to be the viewpane on the admin side
+	
 	public void displayQuestionView() {
 		//get the question list for the poll we are on
 		checkQuestionList();
 		List<Question> tempQList = questionList;
 		
 		//set all the text based on the question list
-		//question1.setText("meme");
+
 		question1.setText(tempQList.get(qIndex).getQuestion());
 		option1Lbl1.setText(tempQList.get(qIndex).getOption1());
 		option2Lbl1.setText(tempQList.get(qIndex).getOption2());
@@ -679,7 +743,6 @@ public class RootLayoutController {
 		//get the total size of the array list and then change the labels
 		qTotal = tempQList.size();
 		questionLbl.setText("Question " + disp + " of " + qTotal);
-		questionLbl2.setText("Question " + disp + " of " + qTotal);
 	}
 	//saves question
 	public void save() {
@@ -703,6 +766,7 @@ public class RootLayoutController {
 	public void setPollName() {
 		Poll tempPoll = pollList.get(pollIndex);
 		chngPollNm.setText(tempPoll.getPollName());
+		pollNameLbl1.setText(tempPoll.getPollName());
 	}
 	
 	//method to add a default question to any qeustion list

@@ -689,14 +689,34 @@ public class RootLayoutController {
 			}	
 	}
  //Student method
+
 	public void stuLogin() {
 		String use1 = studentUsenmTxtfld.getText();
 		String pass1 = studentPassTxtfld.getText();
-			if (use1.equals(studentList.get(qIndex).getStudentID()) && pass1.equals(studentList.get(qIndex).getPassword())) {
+			if (use1.equals(studentList.get(0).getStudentID()) && pass1.equals(studentList.get(0).getPassword())) {
 				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(1).getStudentID()) && pass1.equals(studentList.get(1).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(2).getStudentID()) && pass1.equals(studentList.get(2).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(3).getStudentID()) && pass1.equals(studentList.get(3).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(4).getStudentID()) && pass1.equals(studentList.get(4).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(5).getStudentID()) && pass1.equals(studentList.get(5).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(6).getStudentID()) && pass1.equals(studentList.get(6).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(7).getStudentID()) && pass1.equals(studentList.get(7).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(8).getStudentID()) && pass1.equals(studentList.get(8).getPassword())) {
+				studentTb.setDisable(false);
+			}else if (use1.equals(studentList.get(9).getStudentID()) && pass1.equals(studentList.get(9).getPassword())) {
+					studentTb.setDisable(false);
 			}else {
 				studentTb.setDisable(true);
-			}
+	}
+		
 	}
 		
 	//handles the login button 

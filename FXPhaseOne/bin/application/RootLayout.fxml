@@ -463,6 +463,7 @@
                                                 <VBox prefHeight="36.0" prefWidth="13.0" />
                                                 <Label fx:id="questionLbl2" prefHeight="18.0" prefWidth="83.0" text="Label" />
                                                 <VBox prefHeight="36.0" prefWidth="14.0" />
+                                                <Label fx:id="question2" prefHeight="18.0" prefWidth="83.0" text="Label" />
                                              </children>
                                           </HBox>
                                           <HBox prefHeight="239.0" prefWidth="458.0">
@@ -474,76 +475,64 @@
                                                          <children>
                                                             <RadioButton fx:id="opt1" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="10.0" />
-                                                            <Label fx:id="option1Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <RadioButton fx:id="opt2" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option2Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <RadioButton fx:id="opt3" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option3Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <RadioButton fx:id="opt4" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option4Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <RadioButton fx:id="opt5" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option5Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <RadioButton fx:id="opt6" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option6Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <RadioButton fx:id="opt7" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option7Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
                                                             <RadioButton fx:id="opt8" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option8Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt9" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option9Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt10" mnemonicParsing="false" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
-                                                            <Label fx:id="option10Lbl2" text="Label" />
                                                          </children>
                                                       </HBox>
                                                    </children>
                                                 </VBox>
-                                                <Button fx:id="dec2" mnemonicParsing="false" text="Button" />
-                                                <Button fx:id="inc2" mnemonicParsing="false" text="Button" />
+                                                <Button fx:id="dec2" mnemonicParsing="false" onAction="#handleStuDecClick" text="Button" />
+                                                <Button fx:id="inc2" mnemonicParsing="false" onAction="#handleStuIncClick" text="Button" />
                                              </children>
                                           </HBox>
                                        </children>

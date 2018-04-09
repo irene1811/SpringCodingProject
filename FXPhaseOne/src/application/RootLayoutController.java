@@ -264,6 +264,8 @@ public class RootLayoutController {
 	private Label option7Lbl2;
 	@FXML 
 	private Label option8Lbl2;
+	@FXML
+	private Label question2;
 	@FXML  
 	private RadioButton opt1;
 	@FXML  
@@ -368,7 +370,7 @@ public class RootLayoutController {
 		//add new question to the question list within poll
 		checkQuestionList();
 		//firstPoll.setQuestionList(questionList);
-		List<Question> tempQuestionList = questionList;
+		//List<Question> tempQuestionList = questionList;
 		
 		addDefQuestion();
 		firstPoll.setPollName("Change Poll Name");
@@ -381,6 +383,7 @@ public class RootLayoutController {
 		List<Question> tempQList = questionList;
 		qTotal = tempQList.size();
 		changeQuestionNumberLbl();
+		displayStudentView();
 		
 	}
 
@@ -421,7 +424,31 @@ public class RootLayoutController {
 		}
 	}
 	
+	public void handleStuIncClick() {
+		if (qIndex == questionList.size() - 1) {
+			displayStudentView();
+			changeQuestionNumberLbl();
+		} else {
+			qIndex = qIndex + 1;
+			displayStudentView();
+			changeQuestionNumberLbl();
+		}
+	}
 	
+	@FXML
+	public void handleStuDecClick() {
+		//check if index is already 0
+		if (qIndex == 0) {
+			displayStudentView();
+			changeQuestionNumberLbl();
+		//otherwise change index and display variable
+		} else {
+			qIndex = qIndex - 1;
+			//display
+			displayStudentView();
+			changeQuestionNumberLbl();
+		}
+	}
 	
 	@FXML
 	public void handleSaveClick() {
@@ -450,6 +477,8 @@ public class RootLayoutController {
 		if(pollIndex == 5) {
 			poll6Lbl.setText(tempPoll.getPollName());
 		}
+		displayQuestionView();
+		displayStudentView();
 	}
 	
 	//create another poll
@@ -607,6 +636,26 @@ public class RootLayoutController {
 		option8Lbl1.setText(tempQList.get(qIndex).getOption8());
 	}
 	
+	
+	
+	public void displayStudentView() {
+		//get the question list for the poll we are on
+		checkQuestionList();
+		List<Question> tempQList = questionList;
+		
+		//set all the text based on the question list
+		//question1.setText("meme");
+		question2.setText(tempQList.get(qIndex).getQuestion());
+		opt1.setText(tempQList.get(qIndex).getOption1());
+		opt2.setText(tempQList.get(qIndex).getOption2());
+		opt3.setText(tempQList.get(qIndex).getOption3());
+		opt4.setText(tempQList.get(qIndex).getOption4());
+		opt5.setText(tempQList.get(qIndex).getOption5());
+		opt6.setText(tempQList.get(qIndex).getOption6());
+		opt7.setText(tempQList.get(qIndex).getOption7());
+		opt8.setText(tempQList.get(qIndex).getOption8());
+	}
+	
 	public void changeQuestionNumberLbl() {
 		//get the question list for the poll we are on
 		checkQuestionList();
@@ -619,6 +668,18 @@ public class RootLayoutController {
 		questionLbl1.setText("Question " + disp + " of " + qTotal);
 	}
 	
+	public void changeStudentLabel() {
+		//get the question list for the poll we are on
+		checkQuestionList();
+		List<Question> tempQList = questionList;
+		//disp is always 1 more than qIndex, since qIndex starts at 0
+		int disp = qIndex + 1;
+		//get the total size of the array list and then change the labels
+		qTotal = tempQList.size();
+		questionLbl.setText("Question " + disp + " of " + qTotal);
+		questionLbl2.setText("Question " + disp + " of " + qTotal);
+	}
+	//saves question
 	public void save() {
 		//get the question list for the poll we are on
 		checkQuestionList();

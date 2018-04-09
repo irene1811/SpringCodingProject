@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
@@ -80,7 +79,7 @@
                            </children>
                         </VBox>
                         <Label fx:id="pollNameLbl" prefHeight="28.0" prefWidth="161.0" text="Poll Name:" />
-                        <TextField fx:id="chngPollNm" />
+                        <TextField fx:id="chngPollNm" prefHeight="25.0" prefWidth="276.0" />
                      </children>
                   </HBox>
                </top>
@@ -171,14 +170,10 @@
                      <children>
                         <Button fx:id="newPoll" mnemonicParsing="false" onAction="#createNewPoll" prefHeight="27.0" prefWidth="130.0" text="Create New Poll" />
                         <VBox prefHeight="59.0" prefWidth="40.0" />
-                        <Button fx:id="closeOpenBut" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="delete" mnemonicParsing="false" text="Button" />
                         <VBox prefHeight="46.0" prefWidth="9.0" />
                         <Button fx:id="save" mnemonicParsing="false" onAction="#handleSaveClick" text="Button" />
                         <VBox prefHeight="46.0" prefWidth="9.0" />
-                        <CheckBox fx:id="ninth" mnemonicParsing="false" prefHeight="18.0" prefWidth="58.0" text="CheckBox" />
-                        <CheckBox fx:id="tenth" mnemonicParsing="false" prefHeight="18.0" prefWidth="57.0" text="CheckBox" />
-                        <CheckBox fx:id="eleventh" mnemonicParsing="false" prefHeight="18.0" prefWidth="53.0" text="CheckBox" />
-                        <CheckBox fx:id="twelveth" mnemonicParsing="false" prefHeight="18.0" prefWidth="62.0" text="CheckBox" />
                      </children>
                   </HBox>
                </bottom>
@@ -262,21 +257,16 @@
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <Label fx:id="option9Lbl" text="Label" />
                                                             <VBox prefHeight="32.0" prefWidth="27.0" />
-                                                            <TextField fx:id="op9" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <Label fx:id="option10Lbl" text="Label" />
                                                             <VBox prefHeight="26.0" prefWidth="21.0" />
-                                                            <TextField fx:id="op10" />
                                                          </children>
                                                       </HBox>
                                                    </children>
                                                 </VBox>
-                                                <Button fx:id="newOp" mnemonicParsing="false" text="Button" />
                                                 <Button fx:id="dec" mnemonicParsing="false" onAction="#handleDecClick" text="Button" />
                                                 <Button fx:id="inc" mnemonicParsing="false" onAction="#handleIncClick" text="Button" />
                                              </children>
@@ -291,13 +281,14 @@
                            <content>
                               <ScrollPane prefHeight="200.0" prefWidth="200.0">
                                  <content>
-                                    <VBox prefHeight="307.0" prefWidth="458.0">
+                                    <VBox prefHeight="263.0" prefWidth="458.0">
                                        <children>
                                           <HBox prefHeight="36.0" prefWidth="458.0">
                                              <children>
                                                 <VBox prefHeight="36.0" prefWidth="13.0" />
                                                 <Label fx:id="questionLbl1" prefHeight="18.0" prefWidth="83.0" text="Label" />
                                                 <VBox prefHeight="36.0" prefWidth="14.0" />
+                                                <Label fx:id="question1" prefHeight="18.0" prefWidth="83.0" text="Label" />
                                              </children>
                                           </HBox>
                                           <HBox prefHeight="250.0" prefWidth="458.0">
@@ -345,16 +336,8 @@
                                                             <Label fx:id="option8Lbl1" text="Label" />
                                                          </children>
                                                       </HBox>
-                                                      <HBox prefHeight="26.0" prefWidth="210.0">
-                                                         <children>
-                                                            <Label fx:id="option9Lbl1" text="Label" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox prefHeight="32.0" prefWidth="210.0">
-                                                         <children>
-                                                            <Label fx:id="option10Lbl1" text="Label" />
-                                                         </children>
-                                                      </HBox>
+                                                      <HBox prefHeight="26.0" prefWidth="210.0" />
+                                                      <HBox prefHeight="32.0" prefWidth="210.0" />
                                                    </children>
                                                 </VBox>
                                                 <Button fx:id="dec1" mnemonicParsing="false" text="Button" />
@@ -400,7 +383,6 @@
                                        <children>
                                           <Button fx:id="preview1But1" mnemonicParsing="false" text="Button" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
-                                          <Button fx:id="result1But1" mnemonicParsing="false" text="Button" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -412,7 +394,6 @@
                                        <children>
                                           <Button fx:id="preview2But1" mnemonicParsing="false" text="Button" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
-                                          <Button fx:id="result2But1" mnemonicParsing="false" text="Button" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -424,7 +405,6 @@
                                        <children>
                                           <Button fx:id="preview3But1" mnemonicParsing="false" text="Button" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
-                                          <Button fx:id="result3But1" mnemonicParsing="false" text="Button" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -436,7 +416,6 @@
                                        <children>
                                           <Button fx:id="preview4But1" mnemonicParsing="false" text="Button" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
-                                          <Button fx:id="result4But1" mnemonicParsing="false" text="Button" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -448,7 +427,6 @@
                                        <children>
                                           <Button fx:id="preview5But1" mnemonicParsing="false" text="Button" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
-                                          <Button fx:id="result5But1" mnemonicParsing="false" text="Button" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -460,7 +438,6 @@
                                        <children>
                                           <Button fx:id="preview6But1" mnemonicParsing="false" text="Button" />
                                           <VBox prefHeight="46.0" prefWidth="8.0" />
-                                          <Button fx:id="result6But1" mnemonicParsing="false" text="Button" />
                                        </children>
                                     </HBox>
                                  </children>

@@ -591,28 +591,36 @@ public class RootLayoutController {
 		
 		
 	}
-	
-	
-		//Login Methods
-	@FXML	
-	public void handleLogin() {
-		String user; 
-		String pass;
 		
-		user=adminUsenmTxtfld.getText();
-		pass=adminPassTxtfld.getText();
+	//AdminLogin Methods	
+	public void adminLogin() {
+		String use = adminUsenmTxtfld.getText();
+		String pass = adminPassTxtfld.getText();
+			if (use.equals("yes") && pass.equals("itworks")) {
+				adminTb.setDisable(false);
+			}else {
+				adminTb.setDisable(true);
+			}	
+	}
+ //Student method
+	public void stuLogin() {
+		String use1 = studentUsenmTxtfld.getText();
+		String pass1 = studentPassTxtfld.getText();
+			if (use1.equals(studentList.get(qIndex).getStudentID()) && pass1.equals(studentList.get(qIndex).getPassword())) {
+				studentTb.setDisable(false);
+			}else {
+				studentTb.setDisable(true);
+			}
+	}
 		
-		if (user.equals("bob")) {
-			
-			
-
-		//if(user.equals("blue") && pass.equals("bob") ){
-		  //  adminloginLbl.setText("you in");
-		//}
-		//else{
-		  //  adminUsenmTxtfld.setText("Please try again.");
-		}   
-		
+	//handles the login button 
+	@FXML 
+	public void handleloginButton() {
+		adminLogin();
+	}
+	@FXML
+	public void handlestulog() {
+		stuLogin();
 	}
 	
 }

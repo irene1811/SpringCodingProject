@@ -302,7 +302,11 @@ public class RootLayoutController {
 	
 	@FXML
 	private void initialize() { //an FXML method
-		
+		adminTb.setDisable(true);
+		studentTb.setDisable(true);
+		loginTb.setText("Login Please");
+		adminTb.setText("Admin");
+		studentTb.setText("Student");
 		studentloginLbl.setText("Student Login");
 		adminloginLbl.setText("Admin Login");
 		studentUsenmLbl.setText("Username");
@@ -596,7 +600,7 @@ public class RootLayoutController {
 	public void adminLogin() {
 		String use = adminUsenmTxtfld.getText();
 		String pass = adminPassTxtfld.getText();
-			if (use.equals("yes") && pass.equals("itworks")) {
+			if (use.equals("bob") && pass.equals("blue")) {
 				adminTb.setDisable(false);
 			}else {
 				adminTb.setDisable(true);

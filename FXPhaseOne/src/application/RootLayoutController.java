@@ -290,6 +290,8 @@ public class RootLayoutController {
 		adminTb.setDisable(true);
 		studentTb.setDisable(true);
 		loginTb.setText("Login Please");
+		enterAdmin.setText ("Go");
+		enterStu.setText("Go");
 		adminTb.setText("Admin");
 		studentTb.setText("Student");
 		studentloginLbl.setText("Student Login");
@@ -679,8 +681,7 @@ public class RootLayoutController {
 	}
 
 	
-	//Student method
-
+	//Student login method that reads from the csv file
 	public void stuLogin() {
 		String use1 = studentUsenmTxtfld.getText();
 		String pass1 = studentPassTxtfld.getText();
@@ -710,7 +711,7 @@ public class RootLayoutController {
 		
 	}
 		
-	//handles the login button 
+	//handles the login buttons for admin and student  
 	@FXML 
 	public void handleloginButton() {
 		adminLogin();

@@ -34,9 +34,10 @@
                               <HBox alignment="CENTER" prefHeight="25.0" prefWidth="298.0">
                                  <children>
                                     <Label fx:id="studentPassLbl" text="Label" />
+                                    <VBox prefHeight="26.0" prefWidth="15.0" />
+                                    <PasswordField fx:id="studentPassTxtfld" prefHeight="26.0" prefWidth="130.0" />
                                     <VBox prefHeight="26.0" prefWidth="11.0" />
-                                    <PasswordField fx:id="studentPassTxtfld" />
-                                    <Button fx:id="enterStu" mnemonicParsing="false" onAction="#handlestulog" prefHeight="26.0" prefWidth="28.0" text="Button" />
+                                    <Button fx:id="enterStu" mnemonicParsing="false" onAction="#handlestulog" prefHeight="26.0" prefWidth="40.0" text="Button" />
                                  </children>
                               </HBox>
                            </children>
@@ -56,8 +57,9 @@
                                  <children>
                                     <Label fx:id="adminPassLbl" text="Label" />
                                     <VBox prefHeight="26.0" prefWidth="11.0" />
-                                    <PasswordField fx:id="adminPassTxtfld" />
-                                    <Button fx:id="enterAdmin" mnemonicParsing="false" onAction="#handleloginButton" prefHeight="26.0" prefWidth="28.0" text="Button" />
+                                    <PasswordField fx:id="adminPassTxtfld" prefHeight="26.0" prefWidth="118.0" />
+                                    <VBox prefHeight="26.0" prefWidth="18.0" />
+                                    <Button fx:id="enterAdmin" mnemonicParsing="false" onAction="#handleloginButton" prefHeight="26.0" prefWidth="40.0" text="Button" />
                                  </children>
                               </HBox>
                            </children>

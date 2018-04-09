@@ -12,8 +12,6 @@ public class Question {
 	private String Option6;
 	private String Option7;
 	private String Option8;
-	private String Option9;
-	private String Option10;
 	
 	//default class
 	public Question() {
@@ -26,11 +24,9 @@ public class Question {
 		Option6 = "";
 		Option7 = "";
 		Option8 = "";
-		Option9 = "";
-		Option10 = "";
 	}
 	
-	public Question(String q, String o1, String o2, String o3, String o4, String o5, String o6, String o7, String o8, String o9, String o10) {
+	public Question(String q, String o1, String o2, String o3, String o4, String o5, String o6, String o7, String o8) {
 		this.Question = q;
 		this.Option1 = o1;
 		this.Option2 = o2;
@@ -40,8 +36,6 @@ public class Question {
 		this.Option6 = o6;
 		this.Option7 = o7;
 		this.Option8 = o8;
-		this.Option9 = o9;
-		this.Option10 = o10;
 	}
 
 	public String getQuestion() {
@@ -116,21 +110,6 @@ public class Question {
 		this.Option8 = Option8;
 	}
 
-	public String getOption9() {
-		return Option9;
-	}
-
-	public void setOption9(String Option9) {
-		this.Option9 = Option9;
-	}
-
-	public String getOption10() {
-		return Option10;
-	}
-
-	public void setOption10(String Option10) {
-		this.Option10 = Option10;
-	}
 	
 	
 }

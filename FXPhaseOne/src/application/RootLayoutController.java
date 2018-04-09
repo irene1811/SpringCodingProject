@@ -15,8 +15,6 @@ import java.util.Scanner;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -161,6 +159,8 @@ public class RootLayoutController {
 	@FXML 
 	private Label questionLbl1;
 	@FXML 
+	private Label question1;
+	@FXML 
 	private Label option1Lbl1;
 	@FXML 
 	private Label option2Lbl1;
@@ -209,8 +209,6 @@ public class RootLayoutController {
 	@FXML 
 	private Button result6But;
 	@FXML 
-	private Button newOp;
-	@FXML 
 	private Button inc;
 	@FXML 
 	private Button dec;
@@ -225,7 +223,7 @@ public class RootLayoutController {
 	@FXML 
 	private Button save;
 	@FXML 
-	private Button closeOpenBut;
+	private Button delete;
 	@FXML 
 	private TextField op1;
 	@FXML 
@@ -243,23 +241,11 @@ public class RootLayoutController {
 	@FXML 
 	private TextField op8;
 	@FXML 
-	private TextField op9;
-	@FXML 
-	private TextField op10;
-	@FXML 
 	private TextField questiontxtfld;
 	@FXML 
 	private Tab edit;
 	@FXML 
 	private Tab view; 
-	@FXML 
-	private CheckBox ninth;
-	@FXML 
-	private CheckBox tenth;
-	@FXML 
-	private CheckBox eleventh; 
-	@FXML 
-	private CheckBox twelveth; 
 	@FXML 
 	private Label questionLbl2;
 	@FXML 
@@ -278,10 +264,6 @@ public class RootLayoutController {
 	private Label option7Lbl2;
 	@FXML 
 	private Label option8Lbl2;
-	@FXML 
-	private Label option9Lbl2;
-	@FXML 
-	private Label option10Lbl2;
 	@FXML  
 	private RadioButton opt1;
 	@FXML  
@@ -298,10 +280,6 @@ public class RootLayoutController {
 	private RadioButton opt7;
 	@FXML  
 	private RadioButton opt8;
-	@FXML  
-	private RadioButton opt9;
-	@FXML  
-	private RadioButton opt10;
 	@FXML
 	private Button newPoll;
 	@FXML 
@@ -330,8 +308,6 @@ public class RootLayoutController {
 		option6Lbl.setText("6");
 		option7Lbl.setText("7");
 		option8Lbl.setText("8");
-		option9Lbl.setText("9");
-		option10Lbl.setText("10");
 		option1Lbl1.setVisible(true);
 		option2Lbl1.setVisible(true);
 		option3Lbl1.setVisible(true);
@@ -340,29 +316,22 @@ public class RootLayoutController {
 		option6Lbl1.setVisible(true);
 		option7Lbl1.setVisible(true);
 		option8Lbl1.setVisible(true);
-		option9Lbl1.setVisible(true);
-		option10Lbl1.setVisible(true);
 		op1.setVisible(true);
-		op2.setVisible(false);
-		op3.setVisible(false);
-		op4.setVisible(false);
-		op5.setVisible(false);
-		op6.setVisible(false);
-		op7.setVisible(false);
-		op8.setVisible(false);
-		op9.setVisible(false);
-		op10.setVisible(false);
+		op2.setVisible(true);
+		op3.setVisible(true);
+		op4.setVisible(true);
+		op5.setVisible(true);
+		op6.setVisible(true);
+		op7.setVisible(true);
+		op8.setVisible(true);
 		option1Lbl.setVisible(true);
-		option2Lbl.setVisible(false);
-		option3Lbl.setVisible(false);
-		option4Lbl.setVisible(false);
-		option5Lbl.setVisible(false);
-		option6Lbl.setVisible(false);
-		option7Lbl.setVisible(false);
-		option8Lbl.setVisible(false);
-		option9Lbl.setVisible(false);
-		option10Lbl.setVisible(false);
-		newOp.setText("Add Options");
+		option2Lbl.setVisible(true);
+		option3Lbl.setVisible(true);
+		option4Lbl.setVisible(true);
+		option5Lbl.setVisible(true);
+		option6Lbl.setVisible(true);
+		option7Lbl.setVisible(true);
+		option8Lbl.setVisible(true);
 		inc.setText(">");
 		dec.setText("<");
 		inc1.setText(">");
@@ -370,10 +339,6 @@ public class RootLayoutController {
 		save.setText("Save");
 		edit.setText("Edit");
 		view.setText("View");
-		ninth.setText("9th");
-		tenth.setText("10th");
-		eleventh.setText("11th");
-		twelveth.setText("12th");
 		
 		//hiding all polls labels except for 1 default starter
 		poll2Lbl.setVisible(false);
@@ -418,56 +383,7 @@ public class RootLayoutController {
 		changeQuestionNumberLbl();
 		
 	}
-	
-	//Make a display
-	public void displayQuestion() {
-		//get the question list for the poll we are on
-		checkQuestionList();
-		List<Question> tempQList = questionList;
-		
-		//set all the text based on the question list
-		questiontxtfld.setText(tempQList.get(qIndex).getQuestion());
-		op1.setText(tempQList.get(qIndex).getOption1());
-		op2.setText(tempQList.get(qIndex).getOption2());
-		op3.setText(tempQList.get(qIndex).getOption3());
-		op4.setText(tempQList.get(qIndex).getOption4());
-		op5.setText(tempQList.get(qIndex).getOption5());
-		op6.setText(tempQList.get(qIndex).getOption6());
-		op7.setText(tempQList.get(qIndex).getOption7());
-		op8.setText(tempQList.get(qIndex).getOption8());
-		op9.setText(tempQList.get(qIndex).getOption9());
-		op10.setText(tempQList.get(qIndex).getOption10());
-	}
-	
-	public void changeQuestionNumberLbl() {
-		//get the question list for the poll we are on
-		checkQuestionList();
-		List<Question> tempQList = questionList;
-		//disp is always 1 more than qIndex, since qIndex starts at 0
-		int disp = qIndex + 1;
-		//get the total size of the array list and then change the labels
-		qTotal = tempQList.size();
-		questionLbl.setText("Question " + disp + " of " + qTotal);
-	}
-	
-	public void save() {
-		//get the question list for the poll we are on
-		checkQuestionList();
-		Question tempQ = questionList.get(qIndex);
-		
-		//set the values in textfields as Questions and options at qIndex
-		tempQ.setQuestion(String.valueOf(questiontxtfld.getText()));
-		tempQ.setOption1(String.valueOf(op1.getText()));
-		tempQ.setOption2(String.valueOf(op2.getText()));
-		tempQ.setOption3(String.valueOf(op3.getText()));
-		tempQ.setOption4(String.valueOf(op4.getText()));
-		tempQ.setOption5(String.valueOf(op5.getText()));
-		tempQ.setOption6(String.valueOf(op6.getText()));
-		tempQ.setOption7(String.valueOf(op7.getText()));
-		tempQ.setOption8(String.valueOf(op8.getText()));
-		tempQ.setOption9(String.valueOf(op9.getText()));
-		tempQ.setOption10(String.valueOf(op10.getText()));
-	}
+
 	
 	
 	@FXML
@@ -476,13 +392,14 @@ public class RootLayoutController {
 		save();
 		qIndex = qIndex +1;
 		//if index is greater than total, add a defStu to array list and display, change labels
-		Poll tempPoll = pollList.get(pollIndex);
+		//Poll tempPoll = pollList.get(pollIndex);
 		//if the current question number is larger than total number of Qs, then add a new question.
 		if (qIndex >= qTotal) {
 			addDefQuestion();
 		}
 		//display question at the index 
 		displayQuestion();
+		displayQuestionView();
 		changeQuestionNumberLbl();
 	}
 	
@@ -492,15 +409,19 @@ public class RootLayoutController {
 		//check if index is already 0
 		if (qIndex == 0) {
 			displayQuestion();
+			displayQuestionView();
 			changeQuestionNumberLbl();
 		//otherwise change index and display variable
 		} else {
 			qIndex = qIndex - 1;
 			//display record to edit and record on the view page
 			displayQuestion();
+			displayQuestionView();
 			changeQuestionNumberLbl();
 		}
 	}
+	
+	
 	
 	@FXML
 	public void handleSaveClick() {
@@ -555,35 +476,34 @@ public class RootLayoutController {
 			qIndex = 0;
 			changeQuestionNumberLbl();
 			displayQuestion();
-			
+			displayQuestionView();
 			//Change the poll menu, when new poll is added.
-			if(pollIndex ==1) {
+			if(pollIndex == 1) {
 				poll2Lbl.setText(tempPoll.getPollName());
 				poll2Lbl.setVisible(true);
 				preview2But.setVisible(true);
 				result2But.setVisible(true);
-			} else if(pollIndex ==2) {
+			} else if(pollIndex == 2) {
 				poll3Lbl.setText(tempPoll.getPollName());
 				poll3Lbl.setVisible(true);
 				preview3But.setVisible(true);
 				result3But.setVisible(true);
-			} else if(pollIndex ==3) {
+			} else if(pollIndex == 3) {
 				poll4Lbl.setText(tempPoll.getPollName());
 				poll4Lbl.setVisible(true);
 				preview4But.setVisible(true);
 				result4But.setVisible(true);
-			} else if(pollIndex ==4) {
+			} else if(pollIndex == 4) {
 				poll5Lbl.setText(tempPoll.getPollName());
 				poll5Lbl.setVisible(true);
 				preview5But.setVisible(true);
 				result5But.setVisible(true);
-			} else if(pollIndex ==5) {
+			} else if(pollIndex == 5) {
 				poll6Lbl.setText(tempPoll.getPollName());
 				poll6Lbl.setVisible(true);
 				preview6But.setVisible(true);
 				result6But.setVisible(true);
 			}
-			
 			checkQuestionList();
 		}
 	}
@@ -596,6 +516,7 @@ public class RootLayoutController {
 		//inside the changeQuestionLbl method qTotal will be updated
 		checkQuestionList();
 		displayQuestion();
+		displayQuestionView();
 		changeQuestionNumberLbl();
 	}
 	
@@ -647,6 +568,74 @@ public class RootLayoutController {
 		previewButtons();
 	}
 	
+	
+	
+	//Make a display
+	public void displayQuestion() {
+		//get the question list for the poll we are on
+		checkQuestionList();
+		List<Question> tempQList = questionList;
+		
+		//set all the text based on the question list
+		questiontxtfld.setText(tempQList.get(qIndex).getQuestion());
+		op1.setText(tempQList.get(qIndex).getOption1());
+		op2.setText(tempQList.get(qIndex).getOption2());
+		op3.setText(tempQList.get(qIndex).getOption3());
+		op4.setText(tempQList.get(qIndex).getOption4());
+		op5.setText(tempQList.get(qIndex).getOption5());
+		op6.setText(tempQList.get(qIndex).getOption6());
+		op7.setText(tempQList.get(qIndex).getOption7());
+		op8.setText(tempQList.get(qIndex).getOption8());
+	}
+	
+	//this isn't working and idk why pls help!!!!!!!!!!!!! its supposed to be the viewpane on the admin side
+	public void displayQuestionView() {
+		//get the question list for the poll we are on
+		checkQuestionList();
+		List<Question> tempQList = questionList;
+		
+		//set all the text based on the question list
+		//question1.setText("meme");
+		question1.setText(tempQList.get(qIndex).getQuestion());
+		option1Lbl1.setText(tempQList.get(qIndex).getOption1());
+		option2Lbl1.setText(tempQList.get(qIndex).getOption2());
+		option3Lbl1.setText(tempQList.get(qIndex).getOption3());
+		option4Lbl1.setText(tempQList.get(qIndex).getOption4());
+		option5Lbl1.setText(tempQList.get(qIndex).getOption5());
+		option6Lbl1.setText(tempQList.get(qIndex).getOption6());
+		option7Lbl1.setText(tempQList.get(qIndex).getOption7());
+		option8Lbl1.setText(tempQList.get(qIndex).getOption8());
+	}
+	
+	public void changeQuestionNumberLbl() {
+		//get the question list for the poll we are on
+		checkQuestionList();
+		List<Question> tempQList = questionList;
+		//disp is always 1 more than qIndex, since qIndex starts at 0
+		int disp = qIndex + 1;
+		//get the total size of the array list and then change the labels
+		qTotal = tempQList.size();
+		questionLbl.setText("Question " + disp + " of " + qTotal);
+		questionLbl1.setText("Question " + disp + " of " + qTotal);
+	}
+	
+	public void save() {
+		//get the question list for the poll we are on
+		checkQuestionList();
+		Question tempQ = questionList.get(qIndex);
+		
+		//set the values in textfields as Questions and options at qIndex
+		tempQ.setQuestion(String.valueOf(questiontxtfld.getText()));
+		tempQ.setOption1(String.valueOf(op1.getText()));
+		tempQ.setOption2(String.valueOf(op2.getText()));
+		tempQ.setOption3(String.valueOf(op3.getText()));
+		tempQ.setOption4(String.valueOf(op4.getText()));
+		tempQ.setOption5(String.valueOf(op5.getText()));
+		tempQ.setOption6(String.valueOf(op6.getText()));
+		tempQ.setOption7(String.valueOf(op7.getText()));
+		tempQ.setOption8(String.valueOf(op8.getText()));
+	}
+	
 	//method to set the poll name in the text box
 	public void setPollName() {
 		Poll tempPoll = pollList.get(pollIndex);
@@ -688,7 +677,9 @@ public class RootLayoutController {
 				adminTb.setDisable(true);
 			}	
 	}
- //Student method
+
+	
+	//Student method
 
 	public void stuLogin() {
 		String use1 = studentUsenmTxtfld.getText();
@@ -713,7 +704,7 @@ public class RootLayoutController {
 				studentTb.setDisable(false);
 			}else if (use1.equals(studentList.get(9).getStudentID()) && pass1.equals(studentList.get(9).getPassword())) {
 					studentTb.setDisable(false);
-			}else {
+	} else {
 				studentTb.setDisable(true);
 	}
 		

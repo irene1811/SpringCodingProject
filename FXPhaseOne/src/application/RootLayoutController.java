@@ -217,9 +217,11 @@ public class RootLayoutController {
 	@FXML 
 	private Button dec2;
 	@FXML 
-	private Button save;
+	private Button dec11;
 	@FXML 
-	private Button delete;
+	private Button inc11;
+	@FXML 
+	private Button save;
 	@FXML 
 	private TextField op1;
 	@FXML 
@@ -308,6 +310,30 @@ public class RootLayoutController {
 	private Button submit;
 	@FXML
 	private Label count;
+	@FXML 
+	private Tab results;
+	@FXML 
+	private Label question11;
+	@FXML 
+	private Label option1Lbl11;
+	@FXML 
+	private Label option2Lbl11;
+	@FXML 
+	private Label option3Lbl11;
+	@FXML 
+	private Label option4Lbl11;
+	@FXML 
+	private Label option5Lbl11;
+	@FXML 
+	private Label option6Lbl11;
+	@FXML 
+	private Label option7Lbl11;
+	@FXML 
+	private Label option8Lbl11;
+	@FXML 
+	private Label option9Lbl11;
+	@FXML 
+	private Label option10Lbl11;
 	
 	@FXML
 	private void initialize() { //an FXML method
@@ -887,6 +913,7 @@ public class RootLayoutController {
 	@FXML 
 	public void handlesub () {
 		checkQuestionList();
+		List<Question> tempQList = questionList;
 		if (opt1.isSelected() == true) {
 			count1 = count1 + 1;
 		}else if (opt1.isSelected() == false) {
@@ -907,5 +934,37 @@ public class RootLayoutController {
 		}else {
 			count4 = 0;
 		}
+		if (opt5.isSelected() == true) {
+			count5 = count5 + 1;
+		}else {
+			count5 = 0;
+		}
+		if (opt6.isSelected() == true) {
+			count6 = count6 + 1;
+		}else {
+			count6 = 0;
+		}
+		if (opt7.isSelected() == true) {
+			count7 = count7 + 1;
+		}else {
+			count7 = 0;
+		}
+		if (opt8.isSelected() == true) {
+			count8 = count8 + 1;
+		}else {
+			count8 = 0;
+		}
+		
+		
+		question11.setText(tempQList.get(qIndex).getQuestion());
+		option1Lbl11.setText(Integer.toString(count1));
+		option2Lbl11.setText(Integer.toString(count2));
+		option3Lbl11.setText(Integer.toString(count3));
+		option4Lbl11.setText(Integer.toString(count4));
+		option5Lbl11.setText(Integer.toString(count5));
+		option6Lbl11.setText(Integer.toString(count6));
+		option7Lbl11.setText(Integer.toString(count7));
+		option8Lbl11.setText(Integer.toString(count8));
+	
 	}	
 }

@@ -12,7 +12,6 @@ public class Question {
 	private String Option6;
 	private String Option7;
 	private String Option8;
-	
 	//default class
 	public Question() {
 		Question = "";
@@ -25,7 +24,6 @@ public class Question {
 		Option7 = "";
 		Option8 = "";
 	}
-	
 	public Question(String q, String o1, String o2, String o3, String o4, String o5, String o6, String o7, String o8) {
 		this.Question = q;
 		this.Option1 = o1;
@@ -37,7 +35,6 @@ public class Question {
 		this.Option7 = o7;
 		this.Option8 = o8;
 	}
-
 	public String getQuestion() {
 		return Question;
 	}
@@ -108,8 +105,5 @@ public class Question {
 
 	public void setOption8(String Option8) {
 		this.Option8 = Option8;
-	}
-
-	
-	
+	}	
 }

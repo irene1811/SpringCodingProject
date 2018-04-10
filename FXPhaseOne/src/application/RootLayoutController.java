@@ -22,7 +22,6 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
-
 public class RootLayoutController {
 
 	private Main mainApp;
@@ -81,13 +80,6 @@ public class RootLayoutController {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		//delete later
-		System.out.println(studentList.get(0).getStudentID());
-		System.out.println(studentList.get(0).getFirstName());
-		System.out.println(studentList.get(0).getLastName());
-		System.out.println(studentList.get(0).getGrade());
-		System.out.println(studentList.get(0).getPassword());
 	}
 	
 	@FXML 
@@ -375,6 +367,7 @@ public class RootLayoutController {
 		save.setText("Save");
 		edit.setText("Edit");
 		view.setText("View");
+		submit.setText("Submit");
 		
 		//hiding all polls labels except for 1 default starter on admin and student 
 		poll2Lbl.setVisible(false);
@@ -404,7 +397,6 @@ public class RootLayoutController {
 		preview4But1.setVisible(false);
 		preview5But1.setVisible(false);
 		preview6But1.setVisible(false);
-		
 		//add a new poll to pollList
 		pollList.add(defPoll);
 		//find out new pollSize
@@ -412,10 +404,7 @@ public class RootLayoutController {
 		//Add a new question to the list of questions inside poll
 		Poll firstPoll = pollList.get(pollIndex); // "firstPoll" to shorten code
 		//add new question to the question list within poll
-		checkQuestionList();
-		//firstPoll.setQuestionList(questionList);
-		//List<Question> tempQuestionList = questionList;
-		
+		checkQuestionList();		
 		addDefQuestion();
 		firstPoll.setPollName("Change Poll Name");
 		//change the textfield for Poll name to "Change Poll Name"
@@ -430,8 +419,6 @@ public class RootLayoutController {
 		displayStudentView();
 		
 	}
-
-	
 	@FXML
 	public void handleIncClick() {
 		//save current question
@@ -651,7 +638,6 @@ public class RootLayoutController {
 		pollIndex = 4;
 		previewButtons();
 	}
-	
 	@FXML
 	public void handleP5() {
 		save();
@@ -659,9 +645,7 @@ public class RootLayoutController {
 		pollIndex = 5;
 		previewButtons();
 	}
-	
-	
-	
+
 	public void studentPollLists() {
 		//set question Index to 0 so the first question is shown.
 		qIndex = 0;
@@ -766,9 +750,7 @@ public class RootLayoutController {
 		//get the total size of the array list and then change the labels
 		qTotal = tempQList.size();
 		questionLbl.setText("Question " + disp + " of " + qTotal);
-		questionLbl1.setText("Question " + disp + " of " + qTotal);
 	}
-	
 	public void changeStudentLabel() {
 		//get the question list for the poll we are on
 		checkQuestionList();
@@ -779,13 +761,11 @@ public class RootLayoutController {
 		qTotal = tempQList.size();
 		questionLbl.setText("Question " + disp + " of " + qTotal);
 	}
-	
 	//saves question
 	public void save() {
 		//get the question list for the poll we are on
 		checkQuestionList();
 		Question tempQ = questionList.get(qIndex);
-		
 		//set the values in textfields as Questions and options at qIndex
 		tempQ.setQuestion(String.valueOf(questiontxtfld.getText()));
 		tempQ.setOption1(String.valueOf(op1.getText()));
@@ -797,21 +777,17 @@ public class RootLayoutController {
 		tempQ.setOption7(String.valueOf(op7.getText()));
 		tempQ.setOption8(String.valueOf(op8.getText()));
 	}
-	
 	//method to set the poll name in the text box
 	public void setPollName() {
 		Poll tempPoll = pollList.get(pollIndex);
 		chngPollNm.setText(tempPoll.getPollName());
 		pollNameLbl1.setText(tempPoll.getPollName());
 	}
-	
 	//method to add a default question to any qeustion list
 	public void addDefQuestion() {
 		checkQuestionList();
 		questionList.add(new Question());
-	
 	}
-	
 	//method to check which question list is needed
 	public void checkQuestionList() {
 		if (pollIndex == 0) {
@@ -827,9 +803,7 @@ public class RootLayoutController {
 		} else if (pollIndex == 5) {
 			questionList = questionList5;
 		}
-
 	}
-		
 	//AdminLogin Methods	
 	public void adminLogin() {
 		String use = adminUsenmTxtfld.getText();
@@ -841,9 +815,7 @@ public class RootLayoutController {
 			}else {
 				adminTb.setDisable(true);
 			}	
-	}
-
-	
+	}	
 	//Student login method that reads from the csv file
 	public void stuLogin() {
 		String use1 = studentUsenmTxtfld.getText();
@@ -915,7 +887,6 @@ public class RootLayoutController {
 	@FXML 
 	public void handlesub () {
 		checkQuestionList();
-		
 		if (opt1.isSelected() == true) {
 			count1 = count1 + 1;
 		}else if (opt1.isSelected() == false) {
@@ -925,34 +896,16 @@ public class RootLayoutController {
 			count2 = count2 + 1;
 		}else {
 			count2 = 0;
+		}	
+		if (opt3.isSelected() == true) {
+			count3 = count3 + 1;
+		}else {
+			count3 = 0;
 		}
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		if (opt4.isSelected() == true) {
+			count4 = count4 + 1;
+		}else {
+			count4 = 0;
+		}
+	}	
 }

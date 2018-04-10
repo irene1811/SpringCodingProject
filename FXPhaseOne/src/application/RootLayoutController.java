@@ -20,6 +20,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 
 public class RootLayoutController {
@@ -424,7 +425,6 @@ public class RootLayoutController {
 	}
 
 	
-	
 	@FXML
 	public void handleIncClick() {
 		//save current question
@@ -470,7 +470,6 @@ public class RootLayoutController {
 			changeQuestionNumberLbl();
 		}
 	}
-	
 	@FXML
 	public void handleStuDecClick() {
 		//check if index is already 0
@@ -654,6 +653,8 @@ public class RootLayoutController {
 		previewButtons();
 	}
 	
+	
+	
 	public void studentPollLists() {
 		//set question Index to 0 so the first question is shown.
 		qIndex = 0;
@@ -729,9 +730,7 @@ public class RootLayoutController {
 		option7Lbl1.setText(tempQList.get(qIndex).getOption7());
 		option8Lbl1.setText(tempQList.get(qIndex).getOption8());
 	}
-	
-	
-	
+		
 	public void displayStudentView() {
 		//get the question list for the poll we are on
 		checkQuestionList();
@@ -866,7 +865,6 @@ public class RootLayoutController {
 				studentTb.setDisable(true);
 			}
 	}
-		
 	//handles the login buttons for admin and student  
 	@FXML 
 	public void handleloginButton() {
@@ -881,5 +879,49 @@ public class RootLayoutController {
 		displayStudentView();
 		stuLogin();
 	}
+	//this makes sure the user can only choose one option 
+	ToggleGroup group = new ToggleGroup();
+	@FXML
+	public void handleRBs() {
+		opt1.setToggleGroup(group);	
+		opt2.setToggleGroup(group);
+		opt3.setToggleGroup(group);
+		opt4.setToggleGroup(group);
+		opt5.setToggleGroup(group);
+		opt6.setToggleGroup(group);
+		opt7.setToggleGroup(group);
+		opt8.setToggleGroup(group);
+		
+		RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

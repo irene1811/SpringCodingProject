@@ -462,7 +462,7 @@
                                              <children>
                                                 <VBox prefHeight="36.0" prefWidth="13.0" />
                                                 <VBox prefHeight="36.0" prefWidth="14.0" />
-                                                <Label fx:id="question2" prefHeight="18.0" prefWidth="83.0" text="Label" />
+                                                <Label fx:id="question2" prefHeight="18.0" prefWidth="409.0" text="Label" />
                                              </children>
                                           </HBox>
                                           <HBox prefHeight="239.0" prefWidth="458.0">
@@ -472,49 +472,49 @@
                                                    <children>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt1" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt1" mnemonicParsing="false" prefHeight="17.0" prefWidth="199.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="10.0" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt2" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt2" mnemonicParsing="false" prefHeight="17.0" prefWidth="202.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt3" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt3" mnemonicParsing="false" prefHeight="17.0" prefWidth="197.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt4" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt4" mnemonicParsing="false" prefHeight="17.0" prefWidth="199.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt5" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt5" mnemonicParsing="false" prefHeight="17.0" prefWidth="193.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt6" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt6" mnemonicParsing="false" prefHeight="17.0" prefWidth="203.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt7" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt7" mnemonicParsing="false" prefHeight="17.0" prefWidth="195.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
                                                          </children>
                                                       </HBox>
                                                       <HBox prefHeight="32.0" prefWidth="210.0">
                                                          <children>
-                                                            <RadioButton fx:id="opt8" mnemonicParsing="false" text="RadioButton" />
+                                                            <RadioButton fx:id="opt8" mnemonicParsing="false" prefHeight="17.0" prefWidth="187.0" text="RadioButton" />
                                                             <VBox prefHeight="18.0" prefWidth="11.0" />
                                                          </children>
                                                       </HBox>

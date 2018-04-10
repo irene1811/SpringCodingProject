@@ -362,16 +362,23 @@ public class RootLayoutController {
 		dec.setText("<");
 		inc1.setText(">");
 		dec1.setText("<");
+		inc2.setText(">");
+		dec2.setText("<");
 		save.setText("Save");
 		edit.setText("Edit");
 		view.setText("View");
 		
-		//hiding all polls labels except for 1 default starter
+		//hiding all polls labels except for 1 default starter on admin and student 
 		poll2Lbl.setVisible(false);
 		poll3Lbl.setVisible(false);
 		poll4Lbl.setVisible(false);
 		poll5Lbl.setVisible(false);
 		poll6Lbl.setVisible(false);
+		poll2Lbl1.setVisible(false);
+		poll3Lbl1.setVisible(false);
+		poll4Lbl1.setVisible(false);
+		poll5Lbl1.setVisible(false);
+		poll6Lbl1.setVisible(false);
 		
 		//hiding all poll buttons except for 1 default starter
 		preview2But.setVisible(false);
@@ -384,6 +391,11 @@ public class RootLayoutController {
 		result5But.setVisible(false);
 		preview6But.setVisible(false);
 		result6But.setVisible(false);
+		preview2But1.setVisible(false);
+		preview3But1.setVisible(false);
+		preview4But1.setVisible(false);
+		preview5But1.setVisible(false);
+		preview6But1.setVisible(false);
 		
 		//add a new poll to pollList
 		pollList.add(defPoll);
@@ -541,26 +553,41 @@ public class RootLayoutController {
 				poll2Lbl.setText(tempPoll.getPollName());
 				poll2Lbl.setVisible(true);
 				preview2But.setVisible(true);
+				poll2Lbl1.setText(tempPoll.getPollName());
+				poll2Lbl1.setVisible(true);
+				preview2But1.setVisible(true);
 				result2But.setVisible(true);
 			} else if(pollIndex == 2) {
 				poll3Lbl.setText(tempPoll.getPollName());
 				poll3Lbl.setVisible(true);
 				preview3But.setVisible(true);
+				poll3Lbl1.setText(tempPoll.getPollName());
+				poll3Lbl1.setVisible(true);
+				preview3But1.setVisible(true);
 				result3But.setVisible(true);
 			} else if(pollIndex == 3) {
 				poll4Lbl.setText(tempPoll.getPollName());
 				poll4Lbl.setVisible(true);
 				preview4But.setVisible(true);
+				poll4Lbl1.setText(tempPoll.getPollName());
+				poll4Lbl1.setVisible(true);
+				preview4But1.setVisible(true);
 				result4But.setVisible(true);
 			} else if(pollIndex == 4) {
 				poll5Lbl.setText(tempPoll.getPollName());
 				poll5Lbl.setVisible(true);
 				preview5But.setVisible(true);
+				poll5Lbl1.setText(tempPoll.getPollName());
+				poll5Lbl1.setVisible(true);
+				preview5But1.setVisible(true);
 				result5But.setVisible(true);
 			} else if(pollIndex == 5) {
 				poll6Lbl.setText(tempPoll.getPollName());
 				poll6Lbl.setVisible(true);
 				preview6But.setVisible(true);
+				poll6Lbl1.setText(tempPoll.getPollName());
+				poll6Lbl1.setVisible(true);
+				preview6But1.setVisible(true);
 				result6But.setVisible(true);
 			}
 			checkQuestionList();
@@ -626,6 +653,7 @@ public class RootLayoutController {
 		pollIndex = 5;
 		previewButtons();
 	}
+	
 	public void studentPollLists() {
 		//set question Index to 0 so the first question is shown.
 		qIndex = 0;
@@ -636,12 +664,12 @@ public class RootLayoutController {
 	}
 	@FXML 
 	public void handleS0() {
-		pollIndex=0;
+		pollIndex = 0;
 		studentPollLists();
 	}
 	@FXML 
 	public void handleS1() {
-		pollIndex=1;
+		pollIndex = 1;
 		studentPollLists();
 	}
 	@FXML 
@@ -720,6 +748,7 @@ public class RootLayoutController {
 		opt6.setText(tempQList.get(qIndex).getOption6());
 		opt7.setText(tempQList.get(qIndex).getOption7());
 		opt8.setText(tempQList.get(qIndex).getOption8());
+
 	}
 	
 	public void changeQuestionNumberLbl() {
@@ -744,6 +773,7 @@ public class RootLayoutController {
 		qTotal = tempQList.size();
 		questionLbl.setText("Question " + disp + " of " + qTotal);
 	}
+	
 	//saves question
 	public void save() {
 		//get the question list for the poll we are on
@@ -800,6 +830,8 @@ public class RootLayoutController {
 		String pass = adminPassTxtfld.getText();
 			if (use.equals("bob") && pass.equals("blue")) {
 				adminTb.setDisable(false);
+				pollIndex = 0;
+				qIndex = 0;
 			}else {
 				adminTb.setDisable(true);
 			}	
@@ -830,19 +862,22 @@ public class RootLayoutController {
 				studentTb.setDisable(false);
 			}else if (use1.equals(studentList.get(9).getStudentID()) && pass1.equals(studentList.get(9).getPassword())) {
 					studentTb.setDisable(false);
-	} else {
+			} else {
 				studentTb.setDisable(true);
-	}
-		
+			}
 	}
 		
 	//handles the login buttons for admin and student  
 	@FXML 
 	public void handleloginButton() {
+		pollIndex = 0;
+		qIndex = 0;
 		adminLogin();
 	}
 	@FXML
 	public void handlestulog() {
+		pollIndex = 0;
+		qIndex = 0;
 		stuLogin();
 	}
 	

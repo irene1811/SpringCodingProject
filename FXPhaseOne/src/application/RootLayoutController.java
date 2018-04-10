@@ -26,6 +26,7 @@ import javafx.scene.control.ToggleGroup;
 public class RootLayoutController {
 
 	private Main mainApp;
+	
 	private static List<Student> studentList = new ArrayList<Student>();
 	private static List<Poll> pollList = new ArrayList<Poll>();
 	private static List<Question> questionList = new ArrayList<Question>();
@@ -51,6 +52,8 @@ public class RootLayoutController {
 	private String Option8;
 	private String Option9;
 	private String Option10;
+	
+	int aIndex = 0;
 	
 	public void setMainApp(Main mainApp) { //setter
 		this.mainApp = mainApp;
@@ -309,6 +312,10 @@ public class RootLayoutController {
 	private Button newPoll;
 	@FXML 
 	private TextField chngPollNm;
+	@FXML 
+	private Button submit;
+	@FXML
+	private Label count;
 	
 	@FXML
 	private void initialize() { //an FXML method
@@ -879,8 +886,18 @@ public class RootLayoutController {
 		displayStudentView();
 		stuLogin();
 	}
+	
 	//this makes sure the user can only choose one option 
 	ToggleGroup group = new ToggleGroup();
+	int count1 = 0;
+	int count2 = 0;
+	int count3= 0;
+	int count4= 0;
+	int count5= 0;
+	int count6= 0;
+	int count7= 0;
+	int count8= 0;
+	
 	@FXML
 	public void handleRBs() {
 		opt1.setToggleGroup(group);	
@@ -892,11 +909,25 @@ public class RootLayoutController {
 		opt7.setToggleGroup(group);
 		opt8.setToggleGroup(group);
 		
-		RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+		RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();	
 	}
-	
-	
-	
+	//sumbit method
+	@FXML 
+	public void handlesub () {
+		checkQuestionList();
+		
+		if (opt1.isSelected() == true) {
+			count1 = count1 + 1;
+		}else if (opt1.isSelected() == false) {
+			count1 = 0;
+		}
+		if (opt2.isSelected() == true) {
+			count2 = count2 + 1;
+		}else {
+			count2 = 0;
+		}
+		
+	}
 	
 	
 	

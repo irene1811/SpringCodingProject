@@ -878,6 +878,7 @@ public class RootLayoutController {
 	public void handlestulog() {
 		pollIndex = 0;
 		qIndex = 0;
+		displayStudentView();
 		stuLogin();
 	}
 	
